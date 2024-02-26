@@ -24,13 +24,7 @@ local basalt = require("/CC/Modules/basalt") -- we need basalt here
 
 local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 
---[[ 
-Here we create the sidebar, on focus it should change the position to parent.w - (self.w-1) which "opens the frame"
-when the focus gets lost we simply change the position to "{parent.w}"
-As you can see we add :setZIndex(25) - this makes sure the sidebar frame is always more important than our normal sub frames.
-:setScrollable just makes the sidebar frame scrollable (in case you're adding more frames)
-]]
-local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition("{parent.w}", 1):setSize(15, "{parent.h}"):updateZIndex(25)
+-- local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition("{parent.w}", 1):setSize(15, "{parent.h}"):updateZIndex(25)
 -- :onGetFocus(function(self)
 --     self:setPosition("{parent.w - (self.w-1)}")
 -- end)
@@ -38,6 +32,7 @@ local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition
 --     self:setPosition("{parent.w}")
 -- end)
 
+local sidebar = main:addScrollableFrame()
 print(sidebar)
 
 -- Once again we add 3 frames, the first one should be immediatly visible
