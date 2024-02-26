@@ -5,7 +5,7 @@
 local basalt = require("/CC/Modules/basaltMaster") -- we need basalt here
 local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
-local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
+-- local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
 local resorcesManagerGUIModule = require("/CC/src/ResorcesManager/GUI")
 
 ----------------------------------------
