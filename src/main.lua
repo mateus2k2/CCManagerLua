@@ -32,7 +32,7 @@ end)
     self:setPosition("{parent.w}")
 end)
 
-print(sidebar)
+sidebar:setZIndex(25)
 
 -- Once again we add 3 frames, the first one should be immediatly visible
 local sub = {
