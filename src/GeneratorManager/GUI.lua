@@ -7,7 +7,7 @@ function generatorGUIModule.createGeneratorFrame(frame)
     return frame
 end
 
-function generator.teste(x)
+function generatorGUIModule.teste(x)
     x = x + 1
     return x
 end
