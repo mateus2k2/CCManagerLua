@@ -35,7 +35,8 @@ end)
 
 local sub = {
     {frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}")                                           , title = "Main"},      -- MAIN
-    {frame = generatorGUI.createGeneratorFrame(main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide()) , title = "Generator"}, -- GENRATOR MENAGER
+    {frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide() , title = "Generator"}, -- GENERATOR MENAGER
+    -- {frame = generatorGUI.createGeneratorFrame(main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide()) , title = "Generator"}, -- GENERATOR MENAGER
     {frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide()                                    , title = "Resorses"},  -- RESORCE MENAGER
 }
 
