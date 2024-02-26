@@ -35,7 +35,7 @@ local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 local debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
 
-local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(20, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
+local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(51, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
 :onGetFocus(function(self)
     self:setPosition("{parent.w - (self.w-1)}", 1)
 end)
