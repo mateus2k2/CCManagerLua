@@ -70,6 +70,11 @@ local basalt = require("/CC/Modules/basaltMaster") -- we need basalt here
 local mainFrame = basalt.createFrame()
 local scrollableFrame = mainFrame:addScrollableFrame():setBackground(colors.blue)
 
+local aList = scrollableFrame:addList()
+aList:addItem("Item 1")
+aList:addItem("Item 2", colors.yellow)
+aList:addItem("Item 3", colors.yellow, colors.green)
+
 scrollableFrame:setDirection("horizontal")
 basalt.autoUpdate()
 
