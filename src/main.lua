@@ -30,7 +30,7 @@ when the focus gets lost we simply change the position to "{parent.w}"
 As you can see we add :setZIndex(25) - this makes sure the sidebar frame is always more important than our normal sub frames.
 :setScrollable just makes the sidebar frame scrollable (in case you're adding more frames)
 ]]
-local sidebar = main:addFrame():setBackground(colors.gray):setPosition("{parent.w}", 1):setSize(15, "{parent.h}"):setZIndex(25):setScrollable()
+local sidebar = main:addFrame():setBackground(colors.gray):setPosition("{parent.w}", 1):setSize(15, "{parent.h}"):setScrollable()
 :onGetFocus(function(self)
     self:setPosition("{parent.w - (self.w-1)}")
 end)
