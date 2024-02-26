@@ -9,7 +9,7 @@ local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
 
 local x = 2
 print(x)
-generatorGUIModule.teste(x)
+x = generatorGUIModule.teste(x)
 print(x)
 
 -- ----------------------------------------
