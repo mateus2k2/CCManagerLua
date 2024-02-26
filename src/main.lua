@@ -34,22 +34,22 @@ end)
 
 
 local sub = {
-    main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"),        -- MAIN
-    main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(), -- GENRATOR MENAGER
-    main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(), -- RESORCE MENAGER
+    {frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}")       , title = "Main"},      -- MAIN
+    {frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(), title = "Generator"}, -- GENRATOR MENAGER
+    {frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(), title = "Resorses"},  -- RESORCE MENAGER
 }
 
 local y = 2
 for k,v in pairs(sub)do
-    sidebar:addButton():setText("Example "..k)
+    sidebar:addButton():setText(v.title)
     :setBackground(colors.black)
     :setForeground(colors.lightGray)
     :setSize("{parent.w - 3}", 3)
     :setPosition(2, y)
     :onClick(function()
         for a, b in pairs(sub)do
-            b:hide()
-            v:show()
+            b.frame:hide()
+            v.frame:show()
         end
     end)
     y = y + 4
