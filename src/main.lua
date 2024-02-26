@@ -20,7 +20,7 @@
 -- MAIN GUI
 --------------------------------------------------------------------------------
 
-local basalt = require("/CC/Modules/basalt") -- we need basalt here
+local basalt = require("/CC/Modules/basaltMaster") -- we need basalt here
 
 local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 
