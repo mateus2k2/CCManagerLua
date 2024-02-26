@@ -37,10 +37,10 @@ local debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenu
 
 local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(51, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
 :onGetFocus(function(self)
-    self:setPosition("{parent.w - (self.w-1)}", 1)
+    self:setPosition("{parent.w - (self.w-1)}")
 end)
 :onLoseFocus(function(self)
-    self:setPosition("{parent.w}", 1)
+    self:setPosition("{parent.w}")
 end)
 
 local w, h = main:getSize()
