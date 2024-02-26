@@ -37,12 +37,12 @@ local w, h = main:getSize()
 
 local debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
 
-local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(w-3, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
+local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(w, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
 :onGetFocus(function(self)
-    self:setPosition("{parent.w - (self.w-1)}", 1)
+    self:setPosition("{parent.w - (self.w-1)}", h)
 end)
 :onLoseFocus(function(self)
-    self:setPosition(w-3, 1)
+    self:setPosition(w, 1)
 end)
 
 -- Once again we add 3 frames, the first one should be immediatly visible
