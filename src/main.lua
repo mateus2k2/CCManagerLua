@@ -43,9 +43,8 @@ end)
     self:setPosition("{parent.w}", 1)
 end)
 
-local w, h = sidebar:getSize()
+local w, h = main:getSize()
 debugFrame.debug(w)
-debugFrame.debug(h)
 
 -- Once again we add 3 frames, the first one should be immediatly visible
 local sub = {
