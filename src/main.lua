@@ -16,7 +16,7 @@
 
 -- shell.run("/CC/src/tests/guiTest/menager.lua")
 
-local basalt = require("basalt")
+local basalt = require("/CC/Modules/basaltMaster")
 
 local mainFrame = basalt.createFrame()
 local aButton = mainFrame:addButton():setSize(10, 3)
