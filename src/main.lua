@@ -40,20 +40,20 @@ local sub = {
 }
 
 local y = 2
-for k,v in pairs(sub)do
-    sidebar:addButton():setText(v.title)
-    :setBackground(colors.black)
-    :setForeground(colors.lightGray)
-    :setSize("{parent.w - 3}", 3)
-    :setPosition(2, y)
-    :onClick(function()
-        for a, b in pairs(sub)do
-            b.frame:hide()
-            v.frame:show()
-        end
-    end)
-    y = y + 4
-end
+-- for k,v in pairs(sub)do
+--     sidebar:addButton():setText(v.title)
+--     :setBackground(colors.black)
+--     :setForeground(colors.lightGray)
+--     :setSize("{parent.w - 3}", 3)
+--     :setPosition(2, y)
+--     :onClick(function()
+--         for a, b in pairs(sub)do
+--             b.frame:hide()
+--             v.frame:show()
+--         end
+--     end)
+--     y = y + 4
+-- end
 
 ----------------------------------------
 --MAIN FRAME
