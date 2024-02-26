@@ -89,7 +89,7 @@ local function openSubFrame(id) -- we create a function which switches the frame
 end
 
 local menubar = main:addMenubar():setScrollable() -- we create a menubar in our main frame.
-    :setSize("{parent.w}")
+    :setSize("{parent.w}", 1)
     :onChange(function(self, val)
         openSubFrame(self:getItemIndex()) -- here we open the sub frame based on the table index
     end)
