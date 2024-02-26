@@ -44,8 +44,8 @@ end)
 end)
 
 local w, h = sidebar:getSize()
-print(w)
-print(h)
+debugFrame.debug(w)
+debugFrame.debug(h)
 
 -- Once again we add 3 frames, the first one should be immediatly visible
 local sub = {
