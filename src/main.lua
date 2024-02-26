@@ -56,14 +56,7 @@ for k,v in pairs(sub)do
 end
 
 ----------------------------------------
---SIDE BAR
+--MAIN FRAME
 ----------------------------------------
-
-sub[1].frame:addButton():setPosition(2, 2)
-
-sub[2].frame:addLabel():setText("Hello World!"):setPosition(2, 2)
-
-sub[3].frame:addLabel():setText("Now we're on example 3!"):setPosition(2, 2)
-sub[3].frame:addButton():setText("No functionality"):setPosition(2, 4):setSize(18, 3)
 
 basalt.autoUpdate()
