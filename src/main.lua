@@ -37,7 +37,7 @@ local w, h = main:getSize()
 
 local debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
 
-local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(w, 1):setSize(15+10, "{parent.h}"):setZ(25):setDirection("vertical")
+local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(w, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
 :onGetFocus(function(self)
     self:setPosition("{parent.w - (self.w-1) - 10}", 1)
 end)
@@ -59,7 +59,7 @@ for k,v in pairs(sub)do
     :setBackground(colors.black)
     :setForeground(colors.lightGray)
     :setSize("{parent.w - 2}", 3)
-    :setPosition(2, y)
+    :setPosition(2+1, y)
     :onClick(function() -- here we create a on click event which hides ALL sub frames and then shows the one which is linked to the button
         for a, b in pairs(sub)do
             b:hide()
