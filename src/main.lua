@@ -6,11 +6,7 @@ local basalt = require("/CC/Modules/basaltMaster") -- we need basalt here
 local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
 local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
-
--- local x = 2
--- print(x)
--- x = generatorGUIModule.teste(x)
--- print(x)
+local resorcesManagerGUIModule = require("/CC/src/ResorcesManager/GUI")
 
 ----------------------------------------
 --MAIN FRAME
@@ -38,11 +34,12 @@ end)
 end)
 
 main, frameGenerator = generatorGUIModule.createGeneratorFrame(main)
+main, frameResorces = resorcesManagerGUIModule.createResorcesManagerFrame(main)
 
 local sub = {
     {frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"),         title = "Main"},      -- MAIN
     {frame = frameGenerator,                                                                title = "Generator"}, -- GENERATOR MENAGER
-    {frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),  title = "Resorses"},  -- RESORCE MENAGER
+    {frame = frameResorces,                                                                 title = "Resorses"},  -- RESORCE MENAGER
 }
 
 local y = 2
