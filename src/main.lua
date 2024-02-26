@@ -50,6 +50,9 @@ local sub = {
     main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"),
     main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),
     main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),
+    main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),
+    main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),
+    main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),
 }
 
 --This part of the code adds buttons based on the sub table.
