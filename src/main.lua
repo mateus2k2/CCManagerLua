@@ -59,7 +59,7 @@ for k,v in pairs(sub)do
     :setBackground(colors.black)
     :setForeground(colors.lightGray)
     :setSize("{parent.w - 3}", 3)
-    :setPosition(1, y)
+    :setPosition(2, y)
     :onClick(function() -- here we create a on click event which hides ALL sub frames and then shows the one which is linked to the button
         for a, b in pairs(sub)do
             b:hide()
