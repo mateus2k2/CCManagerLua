@@ -59,11 +59,11 @@ end
 --SIDE BAR
 ----------------------------------------
 
-sub[1]:addButton():setPosition(2, 2)
+sub[1].frame:addButton():setPosition(2, 2)
 
-sub[2]:addLabel():setText("Hello World!"):setPosition(2, 2)
+sub[2].frame:addLabel():setText("Hello World!"):setPosition(2, 2)
 
-sub[3]:addLabel():setText("Now we're on example 3!"):setPosition(2, 2)
-sub[3]:addButton():setText("No functionality"):setPosition(2, 4):setSize(18, 3)
+sub[3].frame:addLabel():setText("Now we're on example 3!"):setPosition(2, 2)
+sub[3].frame:addButton():setText("No functionality"):setPosition(2, 4):setSize(18, 3)
 
 basalt.autoUpdate()
