@@ -74,3 +74,5 @@ local basalt = require("/CC/Modules/basalt")
 local mainFrame = basalt.createFrame()
 local aButton = mainFrame:addButton():setZ(1):setPosition(2,2)
 local aLabel = mainFrame:addLabel():setZ(2):setPosition(2,2):setText("I am a label!")
+
+basalt.autoUpdate()
