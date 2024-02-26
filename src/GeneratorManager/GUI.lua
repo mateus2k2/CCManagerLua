@@ -1,10 +1,15 @@
-local genetorGUIModule = {}
+local generatorGUIModule = {}
 
 local generatorModuleObject = require("/CC/src/GeneratorManager/Generator")
 
-function genetorGUIModule.createGeneratorFrame(frame)
+function generatorGUIModule.createGeneratorFrame(frame)
     frame:setText("Now we're on example 3!"):setPosition(2, 2)
     return frame
 end
 
-return genetorGUIModule
+function generator.teste(x)
+    x = x + 1
+    return x
+end
+
+return generatorGUIModule
