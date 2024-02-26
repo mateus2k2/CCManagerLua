@@ -68,7 +68,7 @@
 
 local basalt = require("/CC/Modules/basaltMaster") -- we need basalt here
 local mainFrame = basalt.createFrame()
-local scrollableFrame = mainFrame:addScrollableFrame()
+local scrollableFrame = mainFrame:addScrollableFrame():setBackground(colors.blue)
 
 scrollableFrame:setDirection("horizontal")
 basalt.autoUpdate()
