@@ -24,7 +24,7 @@ local basalt = require("/CC/Modules/basalt") -- we need basalt here
 
 local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 
-local sidebar = main:addScrollableFrame():setBackground(colors.blue):setPosition("{parent.w}", 10):setSize(150, "{parent.h}"):setZ(25):setDirection("vertical")
+local sidebar = main:addScrollableFrame():setBackground(colors.blue):setPosition(10, 10):setSize(150, "{parent.h}"):setZ(25):setDirection("vertical")
 :onGetFocus(function(self)
     self:setPosition("{parent.w - (self.w-1)}")
 end)
