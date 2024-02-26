@@ -69,7 +69,7 @@
 -- MAIN GUI
 --------------------------------------------------------------------------------
 
-local basalt = require("basalt")
+local basalt = require("/CC/Modules/basalt")
 
 local mainFrame = basalt.createFrame()
 local aButton = mainFrame:addButton():setZIndex(1):setPosition(2,2)
