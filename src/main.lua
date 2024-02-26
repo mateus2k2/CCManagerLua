@@ -33,20 +33,17 @@ local basalt = require("/CC/Modules/basaltMaster") -- we need basalt here
 local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
 local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
+local w, h = main:getSize()
 
 local debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
-debugFrame:setZ(100)
 
-local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(51, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
+local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(w, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
 :onGetFocus(function(self)
     self:setPosition("{parent.w - (self.w-1)}", 1)
 end)
 :onLoseFocus(function(self)
-    self:setPosition(51, 1)
+    self:setPosition(w, 1)
 end)
-
-local w, h = main:getSize()
-debugFrame.debug(w)
 
 -- Once again we add 3 frames, the first one should be immediatly visible
 local sub = {
