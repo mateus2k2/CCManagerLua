@@ -38,6 +38,8 @@ local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition
 --     self:setPosition("{parent.w}")
 -- end)
 
+print(sidebar)
+
 -- Once again we add 3 frames, the first one should be immediatly visible
 local sub = {
     main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"),
