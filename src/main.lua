@@ -40,7 +40,7 @@ local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition
     self:setPosition("{parent.w - (self.w-1)}", 1)
 end)
 :onLoseFocus(function(self)
-    self:setPosition("{parent.w}", 1)
+    self:setPosition(51, 1)
 end)
 
 local w, h = main:getSize()
