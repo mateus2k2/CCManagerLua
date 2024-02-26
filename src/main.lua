@@ -16,60 +16,69 @@
 
 -- shell.run("/CC/src/tests/guiTest/menager.lua")
 
+local basalt = require("basalt")
+
+local mainFrame = basalt.createFrame()
+local aButton = mainFrame:addButton():setSize(10, 3)
+local w, h = aButton:getSize()
+-- basalt.debug("Button position: w=" .. w .. ", h=" .. h) -- prints "Button position: w=10, h=3"
+print(w)
+print(h)
+
 --------------------------------------------------------------------------------
 -- MAIN GUI
 --------------------------------------------------------------------------------
 
-local basalt = require("/CC/Modules/basaltMaster") -- we need basalt here
-local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
+-- local basalt = require("/CC/Modules/basaltMaster") -- we need basalt here
+-- local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
-local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
-local debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
+-- local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
+-- local debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
 
-local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(20, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
-:onGetFocus(function(self)
-    self:setPosition("{parent.w - (self.w-1)}", 1)
-end)
-:onLoseFocus(function(self)
-    self:setPosition("{parent.w}", 1)
-end)
+-- local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(20, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
+-- :onGetFocus(function(self)
+--     self:setPosition("{parent.w - (self.w-1)}", 1)
+-- end)
+-- :onLoseFocus(function(self)
+--     self:setPosition("{parent.w}", 1)
+-- end)
 
-local w, h = sidebar.getSize()
+-- local w, h = sidebar.getSize()
 
-print(w)
-print(h)
+-- print(w)
+-- print(h)
 
 
--- Once again we add 3 frames, the first one should be immediatly visible
-local sub = {
-    main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"),
-    main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),
-    main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),
-}
+-- -- Once again we add 3 frames, the first one should be immediatly visible
+-- local sub = {
+--     main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"),
+--     main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),
+--     main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide(),
+-- }
 
---This part of the code adds buttons based on the sub table.
-local y = 2
-for k,v in pairs(sub)do
-    sidebar:addButton():setText("Example "..k) -- creating the button and adding a name k is just the index
-    :setBackground(colors.black)
-    :setForeground(colors.lightGray)
-    :setSize("{parent.w - 2}", 3)
-    :setPosition(2, y)
-    :onClick(function() -- here we create a on click event which hides ALL sub frames and then shows the one which is linked to the button
-        for a, b in pairs(sub)do
-            b:hide()
-            v:show()
-        end
-    end)
-    y = y + 4
-end
+-- --This part of the code adds buttons based on the sub table.
+-- local y = 2
+-- for k,v in pairs(sub)do
+--     sidebar:addButton():setText("Example "..k) -- creating the button and adding a name k is just the index
+--     :setBackground(colors.black)
+--     :setForeground(colors.lightGray)
+--     :setSize("{parent.w - 2}", 3)
+--     :setPosition(2, y)
+--     :onClick(function() -- here we create a on click event which hides ALL sub frames and then shows the one which is linked to the button
+--         for a, b in pairs(sub)do
+--             b:hide()
+--             v:show()
+--         end
+--     end)
+--     y = y + 4
+-- end
 
-sub[1]:addButton():setPosition(2, 2)
+-- sub[1]:addButton():setPosition(2, 2)
 
-sub[2]:addLabel():setText("Hello World!"):setPosition(2, 2)
+-- sub[2]:addLabel():setText("Hello World!"):setPosition(2, 2)
 
-sub[3]:addLabel():setText("Now we're on example 3!"):setPosition(2, 2)
-sub[3]:addButton():setText("No functionality"):setPosition(2, 4):setSize(18, 3)
+-- sub[3]:addLabel():setText("Now we're on example 3!"):setPosition(2, 2)
+-- sub[3]:addButton():setText("No functionality"):setPosition(2, 4):setSize(18, 3)
 
 -- basalt.autoUpdate()
 
