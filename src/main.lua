@@ -69,17 +69,17 @@ end
 --MAIN FRAME
 ----------------------------------------
 
--- function updateFrame()
---     while true do
---         if sub[indexOnTop].updateFunction then
---             sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
---         end
---         os.sleep(1)
---     end
--- end
+function updateFrame()
+    while true do
+        if sub[indexOnTop].updateFunction then
+            sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
+        end
+        os.sleep(1)
+    end
+end
 
--- parallel.waitForAny(updateFrame, basalt.autoUpdate)
-basalt.autoUpdate()
+parallel.waitForAny(updateFrame, basalt.autoUpdate)
+-- basalt.autoUpdate()
 
 ----------------------------------------
 --TESTES
