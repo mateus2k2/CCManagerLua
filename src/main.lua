@@ -34,14 +34,14 @@ end)
     self:setPosition(w, 1)
 end)
 
-main, frameGenerator = generatorGUIModule.createGeneratorFrame(main)
+main, frameGenerator, generatorObjects = generatorGUIModule.createGeneratorFrame(main)
 main, frameResorces = resorcesManagerGUIModule.createResorcesManagerFrame(main)
 main, frameMain = mainGUIModule.createMainFrame(main)
 
 local sub = {
-    {frame = frameMain,             title = "Main"},      -- MAIN
-    {frame = frameGenerator:hide(), title = "Generator"}, -- GENERATOR MENAGER
-    {frame = frameResorces:hide(),  title = "Resorses"},  -- RESORCE MENAGER
+    {frame = frameMain,             title = "Main",      objects = generatorObjects}, -- MAIN
+    {frame = frameGenerator:hide(), title = "Generator", objects = nil},              -- GENERATOR MENAGER
+    {frame = frameResorces:hide(),  title = "Resorses",  objects = nil},              -- RESORCE MENAGER
 }
 
 local y = 2
