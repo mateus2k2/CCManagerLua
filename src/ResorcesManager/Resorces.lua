@@ -1,7 +1,8 @@
 local resorsesModuleMine = {}
 
 function resorsesModuleMine.getIron()
-    return 0
+    local iron = 0
+    return iron
 end
 
 return resorsesModuleMine
