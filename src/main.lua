@@ -42,7 +42,7 @@ main, frameMain = mainGUIModule.createMainFrame(main)
 
 local sub = {
     {frame = frameMain,             title = "Main",      objects = nil,              updateFunction = nil},                              -- MAIN
-    {frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = generatorGUIModule.updateFrame()}, -- GENERATOR MENAGER
+    {frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = generatorGUIModule.updateFrame}, -- GENERATOR MENAGER
     {frame = frameResorces:hide(),  title = "Resorses",  objects = nil,              updateFunction = nil},                              -- RESORCE MENAGER
 }
 
