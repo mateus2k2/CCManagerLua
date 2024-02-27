@@ -85,6 +85,6 @@
 --TESTES
 ----------------------------------------
 
-shell.run("/CC/tmp/guiTest/menu.lua")
+shell.run("/CC/tmp/guiTest/menager.lua")
 -- local generatorModuleObject = require("/CC/src/GeneratorManager/Generator")
 -- print(generatorModuleObject.getBatteryFillLevel())
