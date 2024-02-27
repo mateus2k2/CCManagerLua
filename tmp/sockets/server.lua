@@ -1,8 +1,3 @@
--- local ws = assert(http.websocket("ws://localhost:8585"))
--- ws.send("Hello!") -- Send a message
--- print(ws.receive()) -- And receive the reply
--- ws.close()
-
 local serverURL = "ws://localhost:8585"
 
 local function handleWebSocketMessage(message)
