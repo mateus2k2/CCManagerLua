@@ -1,5 +1,5 @@
 local resorcesManagerGUIModule = {}
-local resorcesModule = require("CCManagerLua/src/ResorcesManager/Resorces")
+local resorcesModule = require("CC/src/ResorcesManager/Resorces")
 
 function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide()
