@@ -1,3 +1,5 @@
+indexOnTop = 0
+
 ----------------------------------------
 --MODULES
 ----------------------------------------
@@ -39,9 +41,9 @@ main, frameResorces = resorcesManagerGUIModule.createResorcesManagerFrame(main)
 main, frameMain = mainGUIModule.createMainFrame(main)
 
 local sub = {
-    {frame = frameMain,             title = "Main",      objects = generatorObjects}, -- MAIN
-    {frame = frameGenerator:hide(), title = "Generator", objects = nil},              -- GENERATOR MENAGER
-    {frame = frameResorces:hide(),  title = "Resorses",  objects = nil},              -- RESORCE MENAGER
+    {frame = frameMain,             title = "Main",      objects = nil,              updateFunction = nil},                              -- MAIN
+    {frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = generatorGUIModule.updateFrame()}, -- GENERATOR MENAGER
+    {frame = frameResorces:hide(),  title = "Resorses",  objects = nil,              updateFunction = nil},                              -- RESORCE MENAGER
 }
 
 local y = 2
@@ -55,6 +57,7 @@ for k,v in pairs(sub)do
         for a, b in pairs(sub)do
             b.frame:hide()
             v.frame:show()
+            indexOnTop = k
         end
     end)
     y = y + 4

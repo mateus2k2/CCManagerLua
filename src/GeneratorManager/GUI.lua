@@ -21,4 +21,11 @@ function generatorGUIModule.createGeneratorFrame(main)
     return main, frame, objects
 end
 
+function generatorGUIModule.updateFrame(objects)
+    while true do
+        objects.batteryLavel:setText("Battery Energy: " .. generatorModule.getBatteryFillLevel())
+        os.sleep(1)
+    end
+end
+
 return generatorGUIModule
