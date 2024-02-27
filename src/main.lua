@@ -39,9 +39,9 @@ main, frameResorces = resorcesManagerGUIModule.createResorcesManagerFrame(main)
 main, frameMain = mainGUIModule.createMainFrame(main)
 
 local sub = {
-    {frame = frameMain,      title = "Main"},      -- MAIN
-    {frame = frameGenerator, title = "Generator"}, -- GENERATOR MENAGER
-    {frame = frameResorces,  title = "Resorses"},  -- RESORCE MENAGER
+    {frame = frameMain,             title = "Main"},      -- MAIN
+    {frame = frameGenerator:hide(), title = "Generator"}, -- GENERATOR MENAGER
+    {frame = frameResorces:hide(),  title = "Resorses"},  -- RESORCE MENAGER
 }
 
 local y = 2
