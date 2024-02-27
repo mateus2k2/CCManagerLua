@@ -7,7 +7,7 @@ local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
 local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
 local resorcesManagerGUIModule = require("/CC/src/ResorcesManager/GUI")
-local mainGUIModule = require("/CCManagerLua/src/mainGUI")
+local mainGUIModule = require("/CC/src/mainGUI")
 
 ----------------------------------------
 --MAIN FRAME
