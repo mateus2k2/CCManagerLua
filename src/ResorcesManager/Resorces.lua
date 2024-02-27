@@ -1,7 +1,7 @@
-local resorsesModule = {}
+local resorsesModuleMine = {}
 
-function resorsesModule.getIron(main)
+function resorsesModuleMine.getIron()
     return 0
 end
 
-return resorsesModule
+return resorsesModuleMine
