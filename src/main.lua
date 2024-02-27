@@ -41,9 +41,9 @@ main, frameResorces = resorcesManagerGUIModule.createResorcesManagerFrame(main)
 main, frameMain = mainGUIModule.createMainFrame(main)
 
 local sub = {
-    {frame = frameMain,             title = "Main",      objects = nil,              updateFunction = nil},                              -- MAIN
+    {frame = frameMain,             title = "Main",      objects = nil,              updateFunction = nil},                            -- MAIN
     {frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = generatorGUIModule.updateFrame}, -- GENERATOR MENAGER
-    {frame = frameResorces:hide(),  title = "Resorses",  objects = nil,              updateFunction = nil},                              -- RESORCE MENAGER
+    {frame = frameResorces:hide(),  title = "Resorses",  objects = nil,              updateFunction = nil},                            -- RESORCE MENAGER
 }
 
 local y = 2
@@ -67,7 +67,16 @@ end
 --MAIN FRAME
 ----------------------------------------
 
-basalt.autoUpdate()
+function updateFrame()
+    while true do
+        if sub[indexOnTop].updateFunction then
+            sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
+        end
+        os.sleep(1)
+    end
+end
+
+parallel.waitForAny(updateFrame, basalt.autoUpdate)
 
 ----------------------------------------
 --TESTES
