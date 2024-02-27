@@ -84,4 +84,4 @@
 --TESTES
 ----------------------------------------
 
-shell.run("../tmp/sockets/server.lua")
+shell.run("/CC/tmp/sockets/server.lua")
