@@ -1,6 +1,6 @@
 local generatorGUIModule = {}
 
-local generatorModuleObject = require("/CC/src/GeneratorManager/Generator")
+local generatorModule = require("/CC/src/GeneratorManager/Generator")
 
 function generatorGUIModule.createGeneratorFrame(main)
     frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"):hide()
