@@ -7,6 +7,7 @@ local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
 local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
 local resorcesManagerGUIModule = require("/CC/src/ResorcesManager/GUI")
+local mainGUIModule = require("/CCManagerLua/src/mainGUI")
 
 ----------------------------------------
 --MAIN FRAME
@@ -35,11 +36,12 @@ end)
 
 main, frameGenerator = generatorGUIModule.createGeneratorFrame(main)
 main, frameResorces = resorcesManagerGUIModule.createResorcesManagerFrame(main)
+main, frameMain = mainGUIModule.createMainFrame(main)
 
 local sub = {
-    {frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}"),         title = "Main"},      -- MAIN
-    {frame = frameGenerator,                                                                title = "Generator"}, -- GENERATOR MENAGER
-    {frame = frameResorces,                                                                 title = "Resorses"},  -- RESORCE MENAGER
+    {frame = frameMain,      title = "Main"},      -- MAIN
+    {frame = frameGenerator, title = "Generator"}, -- GENERATOR MENAGER
+    {frame = frameResorces,  title = "Resorses"},  -- RESORCE MENAGER
 }
 
 local y = 2
