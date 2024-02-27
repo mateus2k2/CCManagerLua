@@ -11,7 +11,7 @@ function generatorGUIModule.createGeneratorFrame(main)
     local frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}")
     
     frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
-    frame:addLabel():setText("Battery Energy: " .. generatorModule.getBatteryFillLevel()):setPosition(3, 2)
+    frame:addLabel():setText("Battery Energy: " .. generatorModule.getBatteryFillLevel()):setPosition(2, 3)
 
 
     return main, frame
