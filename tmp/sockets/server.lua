@@ -7,7 +7,7 @@ local function handleWebSocketMessage(message)
 end
 
 local function openWebSocket()
-    local ws, err = http.websocket(serverURL)
+    local ws, err = http.websocketAsync(serverURL)
 
     if not ws then
         print("Failed to open websocket: " .. err)
@@ -15,21 +15,10 @@ local function openWebSocket()
     end
 
     print("Websocket opened successfully")
-    print(serverURL)
 
-    local firstIteration = true
-    local token = "123456789"
     while true do
         local event, url, message = os.pullEvent("websocket_message")
         handleWebSocketMessage(message)
-
-        if firstIteration then
-            print("Sending token to server" .. token)
-            ws.send(token)
-            firstIteration = false
-        end
-
-
     end
 end
 
