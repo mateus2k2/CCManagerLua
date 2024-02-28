@@ -7,7 +7,7 @@ local function handleWebSocketMessage(message)
 end
 
 local function openWebSocket()
-    local ws, err = http.websocketAsync(serverURL)
+    local ws, err = http.websocket(serverURL)
 
     if not ws then
         print("Failed to open websocket: " .. err)
@@ -15,11 +15,13 @@ local function openWebSocket()
     end
 
     print("Websocket opened successfully")
+    print(serverURL)
 
     while true do
         local event, url, message = os.pullEvent("websocket_message")
         handleWebSocketMessage(message)
     end
+
 end
 
 openWebSocket()
