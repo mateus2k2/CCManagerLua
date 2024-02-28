@@ -9,7 +9,6 @@ local function handleWebSocketMessage(message)
 
     if message == "energy" then
         response = math.random(0, 100)
-    end
     else 
         response = "Invalid request"
     end
