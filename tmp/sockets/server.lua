@@ -1,4 +1,4 @@
-local socketPort = "5001"
+local socketPort = "5000"
 local serverURL = "ws://localhost:" .. socketPort .. "/"
 -- local serverURL = "wss://ccapi.567437965.xyz/"
 
