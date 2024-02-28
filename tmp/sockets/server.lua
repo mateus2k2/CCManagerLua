@@ -1,4 +1,4 @@
-local serverURL = "ws://ccapi.567437965.xyz/"
+local serverURL = "ws://ccapii.567437965.xyz/"
 
 local function handleWebSocketMessage(message)
     print("Received message from client: " .. message)
