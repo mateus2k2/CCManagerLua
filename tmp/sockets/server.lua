@@ -17,9 +17,16 @@ local function openWebSocket()
     print("Websocket opened successfully")
     print(serverURL)
 
+    local token = "123456789"
+    local isFirst = true
     while true do
         local event, url, message = os.pullEvent("websocket_message")
         handleWebSocketMessage(message)
+
+        if isFirst then
+            ws.send(token)
+            isFirst = false
+        end
     end
 
 end
