@@ -23,7 +23,7 @@ local function openWebSocket()
         local event, url, message = os.pullEvent("websocket_message")
         handleWebSocketMessage(message)
 
-        if isFirst then
+        if isFirst == true then
             print("Sending token to server")
             print(token)
             ws.send(token)
