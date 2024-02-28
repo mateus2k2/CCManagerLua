@@ -40,6 +40,9 @@ local function openWebSocket()
         local event, url, message = os.pullEvent("websocket_message")
         response = handleWebSocketMessage(message)
         ws.send(response)
+
+        --sleep for 1 second
+        os.sleep(1)
         
     end
 
