@@ -3,7 +3,18 @@ local serverURL = "ws://localhost:" .. socketPort .. "/"
 -- local serverURL = "wss://ccapi.567437965.xyz/"
 
 local function handleWebSocketMessage(message)
+    local response = ""
+
     print("Received message from client: " .. message)
+
+    if message == "energy" then
+        response = math.random(0, 100)
+    end
+    else 
+        response = "Invalid request"
+    end
+
+    return response
 end
 
 local function openWebSocket()
@@ -28,7 +39,9 @@ local function openWebSocket()
         end
 
         local event, url, message = os.pullEvent("websocket_message")
-        handleWebSocketMessage(message)
+        response = handleWebSocketMessage(message)
+        ws.send(response)
+        
     end
 
 end
