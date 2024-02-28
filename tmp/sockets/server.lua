@@ -1,6 +1,6 @@
--- local serverURL = "ws://ccapi.567437965.xyz/"
--- local serverURL = "ws://localhost:5000"
-local serverURL = "wss://ccapi.567437965.xyz/"
+local socketPort = "5000"
+local serverURL = "ws://localhost:" .. socketPort .. "/"
+-- local serverURL = "wss://ccapi.567437965.xyz/"
 
 local function handleWebSocketMessage(message)
     print("Received message from client: " .. message)
