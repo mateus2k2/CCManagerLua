@@ -24,6 +24,8 @@ local function openWebSocket()
         handleWebSocketMessage(message)
 
         if isFirst then
+            print("Sending token to server")
+            print(token)
             ws.send(token)
             isFirst = false
         end
