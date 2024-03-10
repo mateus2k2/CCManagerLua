@@ -4,7 +4,7 @@ indexOnTop = 1
 --MODULES
 ----------------------------------------
 
-local basalt = require("/CC/Modules/basaltMaster") -- we need basalt here
+local basalt = require("/CC/Modules/basaltMaster")
 local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
 local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
