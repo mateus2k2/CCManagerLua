@@ -36,6 +36,7 @@ local function startAPI()
             printTable(obj)
         else
             print("Sem requests")
+        end
         
         os.sleep(1)
     end
