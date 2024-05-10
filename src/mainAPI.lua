@@ -6,7 +6,7 @@ local function handleRequest(request)
     responseObj = { resorces = { "iron", 123 } }
     responseStr = textutils.serialiseJSON(responseObj)
 
-    request = http.post({url = serverURL .. "/makeResponse/" .. request["id"], body = responseStr})   
+    request = http.post({url = serverURL .. "/makeResponse/" .. request.id, body = responseStr})   
 
 end
 
@@ -31,10 +31,11 @@ local function startAPI()
         print("Buscando Request")
         request = http.get(serverURL .. "/getOldestRequest")   
         obj = textutils.unserialiseJSON(request.readAll())
-        handleRequest(obj)
-        
-        -- print(request.readAll())
-        printTable(obj)
+        if obj then 
+            handleRequest(obj)
+            printTable(obj)
+        else
+            print("Sem requests")
         
         os.sleep(1)
     end
