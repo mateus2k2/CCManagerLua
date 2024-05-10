@@ -19,7 +19,7 @@ local function startAPI()
     while true do
         print("Buscando Request")
         request = http.get(serverURL .. "/getOldestRequest")   
-        obj = textutils.unserialiseJSON(request)
+        obj = textutils.unserialiseJSON(request.readAll())
         
         -- print(request.readAll())
         printTable(obj)
