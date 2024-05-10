@@ -1,6 +1,6 @@
 local uteisModule = {}
 
-function uteisModule.printTable(tbl, indent)
+local function printTable(tbl, indent)
     indent = indent or 0
     for key, value in pairs(tbl) do
         if type(value) == "table" then
@@ -12,7 +12,7 @@ function uteisModule.printTable(tbl, indent)
     end
 end
 
-function uteisModule.tableToString(tbl)
+local function tableToString(tbl)
     local result = "{"
     local function convert(t)
         for k, v in pairs(t) do
@@ -30,7 +30,7 @@ function uteisModule.tableToString(tbl)
     return result
 end
 
-function uteisModule.breakString(str)
+local function breakString(str)
     local chunks = {}
     
     for i = 1, #str, 47 do
@@ -40,4 +40,8 @@ function uteisModule.breakString(str)
     return chunks
 end
 
-return uteisModule
+return {
+    breakString = breakString,
+    tableToString = tableToString,
+    printTable = printTable
+}
