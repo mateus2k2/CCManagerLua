@@ -18,7 +18,7 @@ local function startAPI()
 
     while true do
         print("Buscando Request")
-        requests = http.get(serverURL .. "/getOldestRequest")   
+        request = http.get(serverURL .. "/getOldestRequest")   
         print(request.readAll())
         os.sleep(1)
     end
