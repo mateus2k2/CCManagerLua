@@ -48,7 +48,7 @@ function APIGUIModule.updateFrame(objects)
         for i = logCount, #APIModule.logs do
             for level, LogString in pairs(APIModule.logs[i]) do
                 for index, chunk in ipairs(breakString(LogString)) do
-                    objects.logsFrame:addLabel():setPosition(1, logLine):setText("#---------------------------------------------#"):setForeground(MyColors[level])
+                    objects.logsFrame:addLabel():setPosition(1, logLine):setText(chunk):setForeground(MyColors[level])
                     logLine = logLine + 1
                 end
                 logCount = logCount + 1
