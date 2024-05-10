@@ -6,16 +6,17 @@ local function handleRequest(request)
 
 end
 
-local function openWebSocket()
+local function startAPI()
     
     print("Starting" .. serverURL)
 
     while true do
-        requests = http.get(serverURL .. "/getRequests")
+        print("Buscando Request")
+        requests = http.get(serverURL .. "/getOldestRequest")
         print(requests)
         os.sleep(1)
     end
     
 end 
 
-openWebSocket()
+startAPI()
