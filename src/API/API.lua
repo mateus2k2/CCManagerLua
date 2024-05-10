@@ -3,7 +3,7 @@ local generatorModuleAPI = require("/CC/src/GeneratorManager/API")
 
 local serverURL = "http://localhost:5000"
 
-local storeAll = nil
+local logs = {}
 
 local function handleRequest(request)
     local responseObj = nil
@@ -20,9 +20,10 @@ local function handleRequest(request)
     local response = http.post(url, responseStr, headers)
 
     if response then
+        logs[#logs + 1] = {"SUCCESS" = "Responded to: " .. tostring(id) .. " Got: " .. tostring(response)} 
         response.close()
     else
-        print("Failed to send response")
+        logs[#logs + 1] = {"ERROR" = "Error in response: " .. tostring(id) .. " Got: " .. tostring(response)} 
     end
 end
 
@@ -31,16 +32,12 @@ local function startAPI()
     print("Starting" .. serverURL)
 
     while true do
-        print("Buscando Request")
         request = http.get(serverURL .. "/getOldestRequest")   
         if request then obj = textutils.unserialiseJSON(request.readAll()) end
-        if obj then 
-            print("Respodendo")
+        if obj then
+            logs[#logs + 1] = {"INFO" = "Request Made: " .. tostring(obj)} 
             handleRequest(obj)
-        else
-            print("Sem requests")
         end
-        
         os.sleep(1)
     end
     
@@ -50,5 +47,5 @@ end
 
 return {
     startAPI = startAPI,
-    storeAll = storeAll
+    logs = logs
 }
