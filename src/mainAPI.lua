@@ -3,12 +3,23 @@
 local serverURL = "http://localhost:5000"
 
 local function handleRequest(request)
-    responseObj = { resorces = { "iron", 123 } }
-    responseStr = textutils.serialiseJSON(responseObj)
-    print(responseStr)
+    local responseObj = { resources = { "iron", 123 } }
+    local responseStr = textutils.serialiseJSON(responseObj)
+    print("Response: " .. responseStr)
 
-    request = http.post({url = serverURL .. "/makeResponse/" .. request.id, body = "123"})   
+    local postData = textutils.urlEncode(responseStr)  -- Encode response JSON for POST body
 
+    local url = serverURL .. "/makeResponse/" .. request.id
+    local headers = { ["Content-Type"] = "application/json" }
+    local response = http.post(url, postData, headers)  -- Send POST request with JSON body
+
+    if response then
+        print("Response Code: " .. response.getResponseCode())
+        print("Response Body: " .. response.readAll())
+        response.close()
+    else
+        print("Failed to send response")
+    end
 end
 
 -- Function to print a table
