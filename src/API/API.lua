@@ -35,7 +35,7 @@ local function startAPI()
         request = http.get(serverURL .. "/getOldestRequest")   
         if request then obj = textutils.unserialiseJSON(request.readAll()) end
         if obj then
-            logs[#logs + 1] = {"INFO" = "Request Made: " .. tostring(obj)} 
+            logs[#logs + 1] = {INFO = "Request Made: " .. tostring(obj)} 
             handleRequest(obj)
         end
         os.sleep(1)
