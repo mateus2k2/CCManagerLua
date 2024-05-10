@@ -6,7 +6,7 @@ local function handleRequest(request)
     responseObj = { resorces = { "iron", 123 } }
     responseStr = textutils.serialiseJSON(responseObj)
 
-    request = http.post({url = serverURL .. "/makeResponse/" .. request.id, body = responseStr})   
+    request = http.post({url = serverURL .. "/makeResponse/" .. request["id"], body = responseStr})   
 
 end
 
