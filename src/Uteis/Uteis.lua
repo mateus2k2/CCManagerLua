@@ -12,15 +12,18 @@ local function printTable(tbl, indent)
     end
 end
 
-local function tableToString(tbl)
+function tableToString(tbl)
     local result = "{"
     local function convert(t)
         for k, v in pairs(t) do
+            result = result .. "" .. tostring(k) .. "= "
+
             if type(v) == "table" then
                 result = result .. tableToString(v)
             else
                 result = result .. tostring(v)
             end
+            
             result = result .. ","
         end
     end
