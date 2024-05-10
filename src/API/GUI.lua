@@ -18,10 +18,10 @@ function APIGUIModule.createAPIFrame(main)
 
     local logsFrame = frame:addScrollableFrame():setSize(47, 1500):setPosition(2, 7):setBackground(colors.black)
 
-    for level, logString in pairs(APIModule.logs) do
-        logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
-        logCount = logCount + 1
-    end
+    -- for level, logString in pairs(APIModule.logs) do
+    --     logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
+    --     logCount = logCount + 1
+    -- end
 
     objects = {
         title = titleLabelVar,
@@ -33,17 +33,13 @@ function APIGUIModule.createAPIFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
-    local localCount = 0
+    local teste = 2
 
     while true do
         for level, logString in pairs(APIModule.logs) do
-            if localCount >= logCount then
-                logsFrame:addLabel():setPosition(3, logCount):setText("TESTE"):setForeground(colors.red)
-                -- logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
-                logCount = logCount + 1
-            else
-                localCount = localCount + 1
-            end
+            logsFrame:addLabel():setPosition(3, teste):setText("TESTE"):setForeground(colors.red)
+            -- logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
+            teste = teste + 1
         end
 
         os.sleep(1)
