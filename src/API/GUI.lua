@@ -30,29 +30,19 @@ end
 
 function breakString(str)
     local chunks = {}
-
-    -- return {"#---------------------------------------------#", "#---------------------------------------------#"}
     
     for i = 1, #str, 47 do
         table.insert(chunks, str:sub(i, i + 46))
     end
-    return chunks
 
-    -- if #str <= 47 then
-    --     return {srt}
-    -- else
-    --     for i = 1, #str, 47 do
-    --         table.insert(chunks, str:sub(i, i + 46))
-    --     end
-    --     return chunks
-    -- end
+    return chunks
 end
 
 function APIGUIModule.updateFrame(objects)
     while true do
         for i = logCount, #APIModule.logs do
             for level, LogString in pairs(APIModule.logs[i]) do
-                for _, chunk in ipairs(breakString("#----------------------------------------------#")) do
+                for _, chunk in ipairs(breakString(LogString)) do
                     objects.logsFrame:addLabel():setPosition(1, logLine):setText(chunk):setForeground(MyColors[level])
                     logLine = logLine + 1
                 end
