@@ -47,5 +47,3 @@ function APIGUIModule.updateFrame(objects)
 end
 
 return APIGUIModule
-
--- #---------------------------------------------#
