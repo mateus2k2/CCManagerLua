@@ -30,7 +30,7 @@ end
 function APIGUIModule.updateFrame(objects)
     while true do
         for level, logString in pairs(APIModule.logs) do
-            objects.logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
+            objects.logsFrame:addLabel():setPosition(3, 2):setText(logString):setForeground(colors.red)
         end
 
         os.sleep(1)
