@@ -25,7 +25,7 @@ function APIGUIModule.createAPIFrame(main)
 
     objects = {
         title = titleLabelVar,
-        APIFrame = APIFrame
+        APIFrame = APIFrame,
         logsFrame = logsFrame
     }
 
