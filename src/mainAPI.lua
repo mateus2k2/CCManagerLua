@@ -41,8 +41,9 @@ local function startAPI()
         request = http.get(serverURL .. "/getOldestRequest")   
         if request then obj = textutils.unserialiseJSON(request.readAll()) end
         if obj then 
+            print("Respodendo")
             handleRequest(obj)
-            printTable(obj)
+            -- printTable(obj)
         else
             print("Sem requests")
         end
