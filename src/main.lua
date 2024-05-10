@@ -4,7 +4,7 @@ indexOnTop = 1
 --MODULES
 ----------------------------------------
 
-local basalt = require("/CC/Modules/basalt2")
+local basalt = require("/CC/Modules/basaltMaster")
 local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
 local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
@@ -18,7 +18,7 @@ local API = require("/CC/src/API/API")
 --MAIN FRAME
 ----------------------------------------
 
-local main = basalt.addFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
+local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 local w, h = main:getSize()
 
 ----------------------------------------
