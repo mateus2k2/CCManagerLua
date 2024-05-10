@@ -3,8 +3,7 @@ local resorsesModuleAPI = {}
 local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
 
 function resorsesModuleAPI.handleRequest(request)
-    local teste = {"teste" : resorsesModuleMine.getIron()}
-    
+    local teste = {"teste" : "teste"}
     return teste
 end
 
