@@ -31,7 +31,7 @@ function breakString(str)
     local chunks = {}
     
     if #str <= 47 then
-        return srt
+        return {srt}
     else
         for i = 1, #str, 47 do
             table.insert(chunks, str:sub(i, i + 46))
