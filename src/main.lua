@@ -53,7 +53,7 @@ local sub = {
 
 local y = 2
 for k,v in pairs(sub) do
-    debugFrame.debug(k)
+    -- debugFrame.debug(k)
 
     sidebar:addButton():setText(v.title)
     :setBackground(colors.black)
