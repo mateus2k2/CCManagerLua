@@ -13,7 +13,7 @@ function APIGUIModule.createAPIFrame(main)
     titleLabelVar = frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
     logsFrame = frame:addLabel():setText("LOGS"):setPosition(2, 5)
 
-    local logs = frame:addScrollableFrame():setSize(20, 15):setPosition(2, 7):setBackground(colors.gray, "#", colors.black)
+    local logs = frame:addScrollableFrame():setSize(20, 15):setPosition(2, 7):setBackground(colors.black)
     logs:addLabel():setPosition(3, 2):setText("Scrollable"):setForeground(colors.red)
     logs:addLabel():setPosition(3, 3):setText("Inside"):setForeground(colors.red)
     logs:addLabel():setPosition(3, 4):setText("Outside"):setForeground(colors.red)
