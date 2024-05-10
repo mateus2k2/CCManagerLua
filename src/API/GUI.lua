@@ -38,7 +38,7 @@ function APIGUIModule.updateFrame(objects)
                 end
             end
         end
-        os.sleep(1)
+        os.sleep(10)
     end
 end
 
