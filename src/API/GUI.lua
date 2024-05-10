@@ -2,6 +2,9 @@ local APIGUIModule = {}
 
 local APIModule = require("/CC/src/API/API")
 
+local logCount = 2
+MyColors = {SUCCESS = colors.green, ERROR = colors.red, INFO = colors.yellow}
+
 function APIGUIModule.createAPIFrame(main)
     local w, h = main:getSize()
     local pageTitle = "API Page"
@@ -11,15 +14,18 @@ function APIGUIModule.createAPIFrame(main)
     local frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}")
     
     titleLabelVar = frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
-    logsFrame = frame:addLabel():setText("LOGS"):setPosition(2, 5)
+    APIFrame = frame:addLabel():setText("LOGS"):setPosition(2, 5)
 
-    local logs = frame:addScrollableFrame():setSize(45, 15):setPosition(2, 7):setBackground(colors.black)
-    logs:addLabel():setPosition(3, 2):setText("Scrollable"):setForeground(colors.red)
-    logs:addLabel():setPosition(3, 3):setText("Inside"):setForeground(colors.red)
-    logs:addLabel():setPosition(3, 4):setText("Outside"):setForeground(colors.red)
+    local logsFrame = frame:addScrollableFrame():setSize(47, 1500):setPosition(2, 7):setBackground(colors.black)
+
+    for level, logString in pairs(APIModule.logs) do
+        logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
+        logCount = logCount + 1
+    end
 
     objects = {
         title = titleLabelVar,
+        APIFrame = APIFrame
         logsFrame = logsFrame
     }
 
@@ -27,8 +33,17 @@ function APIGUIModule.createAPIFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
+    local localCount = 0
+
     while true do
-        objects.logsFrame:setText("LOGS")
+        for level, logString in pairs(APIModule.logs) do
+            if localCount >= logCount then
+                logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
+                logCount = logCount + 1
+            else
+                localCount = localCount + 1
+        end
+
         os.sleep(1)
     end
 end
