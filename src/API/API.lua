@@ -57,5 +57,6 @@ end
 
 return {
     startAPI = startAPI,
-    logs = logs
+    logs = logs,
+    status = status
 }
