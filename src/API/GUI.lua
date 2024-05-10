@@ -42,6 +42,7 @@ function APIGUIModule.updateFrame(objects)
                 logCount = logCount + 1
             else
                 localCount = localCount + 1
+            end
         end
 
         os.sleep(1)
