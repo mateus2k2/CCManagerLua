@@ -27,13 +27,22 @@ function APIGUIModule.createAPIFrame(main)
     return main, frame, objects
 end
 
+function breakString(str)
+    local chunks = {}
+    for i = 1, #str, 47 do
+        table.insert(chunks, str:sub(i, i + 46))
+    end
+    return chunks
+end
+
 function APIGUIModule.updateFrame(objects)
     while true do
         for i = logLine, #APIModule.logs do
             for level, LogString in pairs(APIModule.logs[i]) do
-                objects.logsFrame:addLabel():setPosition(1, i):setText(LogString):setForeground(MyColors[level])
-                objects.logsFrame:addLabel():setPosition(1, i+1):setText("-"):setForeground(MyColors[level])
-                logLine = logLine + 3
+                for _, chunk in ipairs(LogString) do
+                    objects.logsFrame:addLabel():setPosition(1, i):setText(LogString):setForeground(MyColors[level])
+                    logLine = logLine + 1
+                end
             end
         end
         os.sleep(1)
