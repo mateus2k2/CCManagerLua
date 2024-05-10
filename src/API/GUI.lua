@@ -18,11 +18,6 @@ function APIGUIModule.createAPIFrame(main)
 
     local logsFrame = frame:addScrollableFrame():setSize(47, 1500):setPosition(2, 7):setBackground(colors.black)
 
-    -- for level, logString in pairs(APIModule.logs) do
-    --     logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
-    --     logCount = logCount + 1
-    -- end
-
     objects = {
         title = titleLabelVar,
         APIFrame = APIFrame,
@@ -33,13 +28,9 @@ function APIGUIModule.createAPIFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
-    local teste = 2
-
     while true do
         for level, logString in pairs(APIModule.logs) do
-            objects.logsFrame:addLabel():setPosition(3, teste):setText("TESTE"):setForeground(colors.red)
-            -- logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
-            teste = teste + 1
+            logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
         end
 
         os.sleep(1)
