@@ -1,6 +1,7 @@
 local APIGUIModule = {}
 
 local APIModule = require("/CC/src/API/API")
+local uteisModule = require("/CC/Uteis/Uteis")
 
 local logLine = 1
 local logCount = 1

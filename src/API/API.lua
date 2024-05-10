@@ -20,7 +20,7 @@ local function handleRequest(request)
     local response = http.post(url, responseStr, headers)
 
     if response then
-        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(id) .. " Got: " .. tostring(response)} 
+        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(request.id) .. " Got: " .. tostring(response)} 
         response.close()
     else
         logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id) .. " Got: " .. tostring(response)} 

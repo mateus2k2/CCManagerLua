@@ -12,4 +12,32 @@ function uteisModule.printTable(tbl, indent)
     end
 end
 
+function uteisModule.tableToString(tbl)
+    local result = "{"
+    local function convert(t)
+        for k, v in pairs(t) do
+            if type(v) == "table" then
+                result = result .. tableToString(v)
+            else
+                result = result .. tostring(v)
+            end
+            result = result .. ","
+        end
+    end
+    convert(tbl)
+    result = result:sub(1, -2) -- Remove the last comma
+    result = result .. "}"
+    return result
+end
+
+function uteisModule.breakString(str)
+    local chunks = {}
+    
+    for i = 1, #str, 47 do
+        table.insert(chunks, str:sub(i, i + 46))
+    end
+
+    return chunks
+end
+
 return uteisModule
