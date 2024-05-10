@@ -18,7 +18,7 @@ function APIGUIModule.createAPIFrame(main)
     titleLabelVar = frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
     
     local logsFrame = frame:addScrollableFrame():setSize(47, 13):setPosition(2, 5):setBackground(colors.black)
-    statusLabel = frame:addLabel():setText("STATUS"):setPosition(2, 4)
+    statusLabel = frame:addLabel():setText("STATUS"):setPosition(2, 3)
     
     objects = {
         title = titleLabelVar,
