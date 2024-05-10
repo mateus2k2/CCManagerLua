@@ -6,6 +6,12 @@ local function handleRequest(request)
 
 end
 
+function printTable(tbl)
+    for key, value in pairs(tbl) do
+        print(key .. " : " .. value)
+    end
+end
+
 local function startAPI()
     
     print("Starting" .. serverURL)
@@ -13,7 +19,7 @@ local function startAPI()
     while true do
         print("Buscando Request")
         requests = http.get(serverURL .. "/getOldestRequest")
-        print(requests)
+        printTable(requests)
         os.sleep(1)
     end
     
