@@ -46,7 +46,7 @@ main, frameMain = mainGUIModule.createMainFrame(main)
 
 local sub = {
     {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = nil},                            -- MAIN
-    {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = APIGUIModule.updateFunction},    -- RESORCE MENAGER
+    {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = APIGUIModule.updateFrame},    -- RESORCE MENAGER
     {index = 3, frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = generatorGUIModule.updateFrame}, -- GENERATOR MENAGER
     {index = 4, frame = frameResorces:hide(),  title = "Resorses",  objects = nil,              updateFunction = nil},                            -- RESORCE MENAGER
 }
