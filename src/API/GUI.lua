@@ -2,7 +2,7 @@ local APIGUIModule = {}
 
 local APIModule = require("/CC/src/API/API")
 
-local logCount = 0
+local logCount = 1
 MyColors = {SUCCESS = colors.green, ERROR = colors.red, INFO = colors.yellow}
 
 function APIGUIModule.createAPIFrame(main)
@@ -29,16 +29,13 @@ end
 
 function APIGUIModule.updateFrame(objects)
     while true do
-        if logCount ~= #APIModule.logs then
-            for key, value in pairs(APIModule.logs) do
-                for level, LogString in pairs(value) do
-                    objects.logsFrame:addLabel():setPosition(2, key):setText(LogString):setForeground(MyColors[level])
-                    objects.logsFrame:addLabel():setPosition(2, key+1):setText(" "):setForeground(MyColors[level])
-                    logCount = logCount + 1
-                end
+        for i = logCount, #APIModule.logs do
+            for level, LogString in pairs(APIModule[i]) do
+                objects.logsFrame:addLabel():setPosition(2, key):setText(LogString):setForeground(MyColors[level])
+                logCount = logCount + 1
             end
         end
-        os.sleep(10)
+        os.sleep(1)
     end
 end
 
