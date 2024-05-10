@@ -12,6 +12,8 @@ local resorcesManagerGUIModule = require("/CC/src/ResorcesManager/GUI")
 local APIGUIModule = require("/CC/src/API/GUI")
 local mainGUIModule = require("/CC/src/mainGUI")
 
+local API = require("/CC/src/API/API")
+
 ----------------------------------------
 --MAIN FRAME
 ----------------------------------------
@@ -81,7 +83,7 @@ function updateFrame()
     end
 end
 
-parallel.waitForAny(updateFrame, basalt.autoUpdate)
+parallel.waitForAny(updateFrame, API.startAPI, basalt.autoUpdate)
 
 -- ----------------------------------------
 -- --TESTES
