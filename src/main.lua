@@ -79,6 +79,7 @@ function updateFrame()
         if sub[indexOnTop].updateFunction then
             sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
         end
+        os.sleep(1)
     end
 end
 
