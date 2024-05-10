@@ -36,7 +36,7 @@ end
 
 function APIGUIModule.updateFrame(objects)
     local localCount = 0
-    debugFrame.debug("123")
+    -- debugFrame.debug("123")
 
     while true do
         for level, logString in pairs(APIModule.logs) do
