@@ -5,13 +5,10 @@ local serverURL = "http://localhost:5000"
 local function handleRequest(request)
     local responseObj = { resources = { "iron", 123 } }
     local responseStr = textutils.serialiseJSON(responseObj)
-    print("Response: " .. responseStr)
-
-    local postData = textutils.urlEncode(responseStr)  -- Encode response JSON for POST body
 
     local url = serverURL .. "/makeResponse/" .. request.id
     local headers = { ["Content-Type"] = "application/json" }
-    local response = http.post(url, postData, headers)  -- Send POST request with JSON body
+    local response = http.post(url, responseStr, headers)  -- Send POST request with JSON body
 
     if response then
         print("Response Code: " .. response.getResponseCode())
