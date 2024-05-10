@@ -32,7 +32,7 @@ function APIGUIModule.updateFrame(objects)
         local curLogCount = logCount
         for i = logCount, #APIModule.logs do
             for level, LogString in pairs(APIModule.logs[i]) do
-                objects.logsFrame:addLabel():setPosition(2, key):setText("123"):setForeground(MyColors[level])
+                objects.logsFrame:addLabel():setPosition(2, key):setText(LogString):setForeground(MyColors[level])
                 curLogCount = curLogCount + 1
             end
         end
