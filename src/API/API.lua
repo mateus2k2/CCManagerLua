@@ -22,10 +22,10 @@ local function handleRequest(request)
     local response = http.post(url, responseStr, headers)
 
     if response then
-        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(request.id) .. " Got: " .. textutils.serialize(response.getResponseCode())} 
+        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(request.id) .. " Got: " .. (response.readAll())} 
         response.close()
     else
-        logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id) .. " Got: " .. textutils.serialize(response.getResponseCode())} 
+        logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id) .. " Got: " .. (response.readAll())} 
     end
 end
 
