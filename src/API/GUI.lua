@@ -29,6 +29,7 @@ end
 
 function breakString(str)
     local chunks = {}
+    return {"#---------------------------------------------#"}
     
     if #str <= 47 then
         return {srt}
