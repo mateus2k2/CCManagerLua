@@ -46,9 +46,9 @@ end
 local function status()
     request = http.get(serverURL .. "/status")   
     if request then 
-        return true 
+        return "OK" 
     else
-        return false
+        return "DOWN"
     end
 
 end

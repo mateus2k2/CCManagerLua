@@ -17,7 +17,7 @@ function APIGUIModule.createAPIFrame(main)
     
     titleLabelVar = frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
     
-    local logsFrame = frame:addScrollableFrame():setSize(47, 13):setPosition(2, 5):setBackground(colors.black)
+    local logsFrame = frame:addScrollableFrame():setSize(47, 14):setPosition(2, 5):setBackground(colors.black)
     statusLabel = frame:addLabel():setText("STATUS"):setPosition(2, 3)
     
     objects = {
@@ -31,7 +31,7 @@ end
 
 function APIGUIModule.updateFrame(objects)
     while true do
-        
+        objects.statusLabel:setText("STATUS = " .. APIModule.status())
 
         for i = logCount, #APIModule.logs do
             for level, LogString in pairs(APIModule.logs[i]) do
