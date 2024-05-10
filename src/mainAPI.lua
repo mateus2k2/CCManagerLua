@@ -1,6 +1,6 @@
 -- Imports das APIs individuais
-local resorsesModuleAPI  = require("../CC/src/ResorcesManager/API")
-local generatorModuleAPI = require("../CC/src/GeneratorManager/API")
+local resorsesModuleAPI  = require("/CC/src/ResorcesManager/API")
+local generatorModuleAPI = require("/CC/src/GeneratorManager/API")
 
 local serverURL = "http://localhost:5000"
 
