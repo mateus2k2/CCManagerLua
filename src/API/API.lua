@@ -46,7 +46,7 @@ local function startAPI()
     
 end 
 
-startAPI()
+-- startAPI()
 
 return {
     startAPI = startAPI,
