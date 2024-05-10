@@ -31,7 +31,7 @@ function APIGUIModule.updateFrame(objects)
     while true do
         for i = logLine, #APIModule.logs do
             for level, LogString in pairs(APIModule.logs[i]) do
-                objects.logsFrame:addLabel():setPosition(2, i):setText("#--------------------------------------------#"):setForeground(MyColors[level])
+                objects.logsFrame:addLabel():setPosition(1, i):setText("#---------------------------------------------#"):setForeground(MyColors[level])
                 logLine = logLine + 1
             end
         end
