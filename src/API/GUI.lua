@@ -1,5 +1,3 @@
-local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
-
 local APIGUIModule = {}
 
 local APIModule = require("/CC/src/API/API")
@@ -36,7 +34,6 @@ end
 
 function APIGUIModule.updateFrame(objects)
     local localCount = 0
-    -- debugFrame.debug("123")
 
     while true do
         for level, logString in pairs(APIModule.logs) do
