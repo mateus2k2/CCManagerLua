@@ -22,10 +22,10 @@ local function handleRequest(request)
     local response = http.post(url, responseStr, headers)
 
     if response then
-        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(request.id) .. " Got: " .. uteisModule.tableToString(response)} 
+        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(request.id) .. " Got: " .. textutils.serialize(response)} 
         response.close()
     else
-        logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id) .. " Got: " .. uteisModule.tableToString(response)} 
+        logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id) .. " Got: " .. textutils.serialize(response)} 
     end
 end
 
@@ -35,7 +35,7 @@ local function startAPI()
         request = http.get(serverURL .. "/getOldestRequest")   
         if request then obj = textutils.unserialiseJSON(request.readAll()) end
         if obj then
-            logs[#logs + 1] = {INFO = "Request Made: " .. uteisModule.tableToString(obj)} 
+            logs[#logs + 1] = {INFO = "Request Made: " .. textutils.serialize(obj)} 
             handleRequest(obj)
         end
         os.sleep(1)
