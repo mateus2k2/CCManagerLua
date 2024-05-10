@@ -38,7 +38,8 @@ function APIGUIModule.updateFrame(objects)
     while true do
         for level, logString in pairs(APIModule.logs) do
             if localCount >= logCount then
-                logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
+                logsFrame:addLabel():setPosition(3, logCount):setText("TESTE"):setForeground(colors.red)
+                -- logsFrame:addLabel():setPosition(3, logCount):setText(logString):setForeground(MyColors.level)
                 logCount = logCount + 1
             else
                 localCount = localCount + 1
