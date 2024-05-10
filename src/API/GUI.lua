@@ -30,16 +30,17 @@ end
 
 function breakString(str)
     local chunks = {}
+
     return {"#---------------------------------------------#"}
     
-    if #str <= 47 then
-        return {srt}
-    else
-        for i = 1, #str, 47 do
-            table.insert(chunks, str:sub(i, i + 46))
-        end
-        return chunks
-    end
+    -- if #str <= 47 then
+    --     return {srt}
+    -- else
+    --     for i = 1, #str, 47 do
+    --         table.insert(chunks, str:sub(i, i + 46))
+    --     end
+    --     return chunks
+    -- end
 end
 
 function APIGUIModule.updateFrame(objects)
