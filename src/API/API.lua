@@ -1,8 +1,9 @@
--- Imports das APIs individuais
 local resorsesModuleAPI  = require("/CC/src/ResorcesManager/API")
 local generatorModuleAPI = require("/CC/src/GeneratorManager/API")
 
 local serverURL = "http://localhost:5000"
+
+local storeAll = nil
 
 local function handleRequest(request)
     local responseObj = nil
@@ -46,3 +47,8 @@ local function startAPI()
 end 
 
 startAPI()
+
+return {
+    startAPI = startAPI,
+    storeAll = storeAll
+}
