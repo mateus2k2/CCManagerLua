@@ -29,8 +29,6 @@ end
 
 
 local function startAPI()
-    print("Starting" .. serverURL)
-
     while true do
         request = http.get(serverURL .. "/getOldestRequest")   
         if request then obj = textutils.unserialiseJSON(request.readAll()) end
