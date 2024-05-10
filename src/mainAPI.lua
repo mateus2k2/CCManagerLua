@@ -7,7 +7,7 @@ local function handleRequest(request)
     responseStr = textutils.serialiseJSON(responseObj)
     print(responseStr)
 
-    request = http.post({url = serverURL .. "/makeResponse/" .. request.id, body = responseStr})   
+    request = http.post({url = serverURL .. "/makeResponse/" .. request.id, body = "123"})   
 
 end
 
