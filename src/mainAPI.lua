@@ -5,6 +5,7 @@ local serverURL = "http://localhost:5000"
 local function handleRequest(request)
     responseObj = { resorces = { "iron", 123 } }
     responseStr = textutils.serialiseJSON(responseObj)
+    print(responseStr)
 
     request = http.post({url = serverURL .. "/makeResponse/" .. request.id, body = responseStr})   
 
