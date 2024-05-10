@@ -7,7 +7,7 @@ MyColors = {SUCCESS = colors.green, ERROR = colors.red, INFO = colors.yellow}
 
 function APIGUIModule.createAPIFrame(main)
     local w, h = main:getSize()
-    local pageTitle = "API Page"
+    local pageTitle = "Logs API Page"
     local pageTitleLength = string.len(pageTitle)
     local pageTitleX = math.floor(w / 2 - pageTitleLength / 2)
 
@@ -16,7 +16,7 @@ function APIGUIModule.createAPIFrame(main)
     titleLabelVar = frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
     -- APIFrame = frame:addLabel():setText("LOGS"):setPosition(2, 5)
 
-    local logsFrame = frame:addScrollableFrame():setSize(47, 15):setPosition(2, 7):setBackground(colors.black)
+    local logsFrame = frame:addScrollableFrame():setSize(47, 13):setPosition(1, 7):setBackground(colors.black)
 
     objects = {
         title = titleLabelVar,
