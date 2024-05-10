@@ -1,39 +1,32 @@
 -- Imports das APIs individuais
+local resorsesModuleAPI  = require("/CC/src/ResorcesManager/API")
+local generatorModuleAPI = require("/CC/src/GeneratorManager/API")
 
 local serverURL = "http://localhost:5000"
 
 local function handleRequest(request)
-    local responseObj = { resources = { "iron", 123 } }
-    local responseStr = textutils.serialiseJSON(responseObj)
+    local responseObj = nil
 
+    if request.body.type == "resource" then
+        responseObj = resorsesModuleAPI.handleRequest(request.body)
+    elseif request.body.type == "generator" then
+        responseObj = generatorModuleAPI.handleRequest(request.body)
+    end
+
+    local responseStr = textutils.serialiseJSON(responseObj)
     local url = serverURL .. "/makeResponse/" .. request.id
     local headers = { ["Content-Type"] = "application/json" }
-    local response = http.post(url, responseStr, headers)  -- Send POST request with JSON body
+    local response = http.post(url, responseStr, headers)
 
     if response then
-        print("Response Code: " .. response.getResponseCode())
-        print("Response Body: " .. response.readAll())
         response.close()
     else
         print("Failed to send response")
     end
 end
 
--- Function to print a table
-function printTable(tbl, indent)
-    indent = indent or 0
-    for key, value in pairs(tbl) do
-        if type(value) == "table" then
-            print(string.rep("  ", indent) .. key .. " : ")
-            printTable(value, indent + 1)
-        else
-            print(string.rep("  ", indent) .. key .. " : " .. tostring(value))
-        end
-    end
-end
 
 local function startAPI()
-    
     print("Starting" .. serverURL)
 
     while true do
@@ -43,7 +36,6 @@ local function startAPI()
         if obj then 
             print("Respodendo")
             handleRequest(obj)
-            -- printTable(obj)
         else
             print("Sem requests")
         end
