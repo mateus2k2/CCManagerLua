@@ -1,3 +1,5 @@
+local uteis = require("/CC/src/Uteis/Uteis")
+
 local resorcesManagerGUIModule = {}
 local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
 
@@ -23,7 +25,7 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     searchButton:onClick(function(text)
         retorno = resorsesModuleMine.getItemAmount(text)
         itemLabel:setText(retorno)
-        debugFrame.debug(textutils.serialise(text))
+        debugFrame.debug(uteis.tableToString(text))
 end)
 
     local objects = {
