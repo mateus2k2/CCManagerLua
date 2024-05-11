@@ -24,7 +24,7 @@ local monitorGroup = {
 }
 monitorFrame:setMonitorGroup(monitorGroup)
 
-local main = monitorFrame.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
+local main = monitorFrame.addFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 local w, h = main:getSize()
 
 local debugTestInMain = require("/CC/src/Uteis/Debug")
