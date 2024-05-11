@@ -2,7 +2,7 @@ local generatorGUIModule = {}
 
 local Generator = require("/CC/src/GeneratorManager/Generator")
 
-local function handleGeneratorButton()
+function handleGeneratorButton()
     if Generator.getLock() then
         if Generator.getStateGenerator() then 
             Generator.turnOffGenerator()
