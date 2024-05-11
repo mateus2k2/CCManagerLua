@@ -14,6 +14,7 @@ function generatorModule.getLock()
         return true
     else
         return false
+    end
 end
 
 function generatorModule.releaseLock()
