@@ -1,6 +1,6 @@
 local gerenatorModuleAPI = {}
 
-local generatorModule = require("/CC/src/GeneratorManager/Generator")
+local generatorModule = require("/CC/GeneratorManager/Generator")
 
 function gerenatorModuleAPI.handleRequest()
     return {teste = generatorModule.getBatteryFillLevel()}

@@ -1,9 +1,9 @@
-local uteis = require("/CC/src/Uteis/Uteis")
+local uteis = require("/CC/Uteis/Uteis")
 
 local resorcesManagerGUIModule = {}
-local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
+local resorsesModuleMine = require("/CC/ResorcesManager/Resorces")
 
-local debugTestInMain = require("/CC/src/Uteis/Debug")
+local debugTestInMain = require("/CC/Uteis/Debug")
 debugFrame = debugTestInMain.debugFunc({first = false})
 
 function resorcesManagerGUIModule.createResorcesManagerFrame(main)

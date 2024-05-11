@@ -6,12 +6,12 @@ indexOnTop = 1
 
 local basalt = require("/Modules/basalt")
 
-local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
-local resorcesManagerGUIModule = require("/CC/src/ResorcesManager/GUI")
-local APIGUIModule = require("/CC/src/API/GUI")
-local mainGUIModule = require("/CC/src/mainGUI")
+local generatorGUIModule = require("/CC/GeneratorManager/GUI")
+local resorcesManagerGUIModule = require("/CC/ResorcesManager/GUI")
+local APIGUIModule = require("/CC/API/GUI")
+local mainGUIModule = require("/CC/mainGUI")
 
-local API = require("/CC/src/API/API")
+local API = require("/CC/API/API")
 
 ----------------------------------------
 --MAIN FRAME
@@ -23,7 +23,7 @@ local API = require("/CC/src/API/API")
 local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 local w, h = main:getSize()
 
-local debugTestInMain = require("/CC/src/Uteis/Debug")
+local debugTestInMain = require("/CC/Uteis/Debug")
 debugFrame = debugTestInMain.debugFunc({basalt = basalt, main = main, first = true})
 
 ----------------------------------------
@@ -85,7 +85,7 @@ parallel.waitForAny(updateFrame, API.startAPI, basalt.autoUpdate)
 -- --TESTES
 -- ----------------------------------------
 
--- shell.run("/CC/src/API/API.lua")
+-- shell.run("/CC/API/API.lua")
 
 
 -- local basalt = require("/Modules/basalt2")

@@ -1,7 +1,7 @@
-local resorsesModuleAPI  = require("/CC/src/ResorcesManager/API")
-local generatorModuleAPI = require("/CC/src/GeneratorManager/API")
+local resorsesModuleAPI  = require("/CC/ResorcesManager/API")
+local generatorModuleAPI = require("/CC/GeneratorManager/API")
 
-local uteisModule = require("/CC/src/Uteis/Uteis")
+local uteisModule = require("/CC/Uteis/Uteis")
 
 local serverURL = "http://localhost:5000"
 

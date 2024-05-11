@@ -1,6 +1,6 @@
 local generatorGUIModule = {}
 
-local Generator = require("/CC/src/GeneratorManager/Generator")
+local Generator = require("/CC/GeneratorManager/Generator")
 
 function handleGeneratorButton()
     if Generator.getLock() then
