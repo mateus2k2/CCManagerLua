@@ -16,8 +16,8 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     
     frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
 
-    local searchField = frame:addTextfield():setPosition(pageTitleX, 8):setBorder(colors.white):setSize(19, 3)
-    local searchButton = frame:addButton():setText("Search"):setPosition(pageTitleX, 8):onClick(handleSearchButton):setBackground(colors.red):setBorder(colors.white):setSize(19, 3)
+    local searchField = frame:addTextfield():setPosition(pageTitleX, 4):setBorder(colors.white):setSize(19, 3)
+    local searchButton = frame:addButton():setText("Search"):setPosition(pageTitleX, 6):onClick(handleSearchButton):setBackground(colors.red):setBorder(colors.white):setSize(19, 3)
 
     local objects = {
         title = titleLabel,
