@@ -18,7 +18,7 @@ function resorsesModuleMine.getItemAmount(name)
     if returnVar == nil then return "eror" end
     if returnVar == "nil" then return "Item Not Found" end
 
-    return 123
+    return returnVar.amount
 end
 
 return resorsesModuleMine

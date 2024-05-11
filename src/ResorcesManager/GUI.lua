@@ -1,14 +1,6 @@
 local resorcesManagerGUIModule = {}
 local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
 
-
-local search = ""
-
-function handleSearchButton()
-
-end
-
-
 function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     local w, h = main:getSize()
     local pageTitle = "Resorces Manager"
@@ -27,10 +19,6 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     searchButton:onClick(function(text)
         retorno = resorsesModuleMine.getItemAmount(text)
         itemLabel:setText(retorno)
-    end)
-
-    searchField:onChange(function(text)
-        search = text
     end)
 
     local objects = {
