@@ -88,14 +88,14 @@
 -- -- shell.run("/CC/src/API/API.lua")
 
 local basalt = require("/basalt")
-local main = basalt.getMainFrame()
+-- local main = basalt.getMainFrame()
 
--- Create a button
-local button = main:addButton():setText("Click me")
+-- -- Create a button
+-- local button = main:addButton():setText("Click me")
 
--- Attach an onClick event to the button
-button:onClick(function()
-    basalt.debug("Button clicked!")
-end)
+-- -- Attach an onClick event to the button
+-- button:onClick(function()
+--     basalt.debug("Button clicked!")
+-- end)
 
-basalt.run()
+-- basalt.run()
