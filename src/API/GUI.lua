@@ -17,13 +17,14 @@ function APIGUIModule.createAPIFrame(main)
     
     titleLabelVar = frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
     
-    local logsFrame = frame:addScrollableFrame():setSize("{parent.w - 5}", "{parent.h - 5}"):setPosition(2, 5):setBackground(colors.black):setBorder(colors.white)
+    local logsFrame = frame:addScrollableFrame():setSize("{parent.w - 5}", "{parent.h - 8}"):setPosition(2, 5):setBackground(colors.black):setBorder(colors.white)
     statusLabel = frame:addLabel():setText("STATUS"):setPosition(2, 3)
-    
+
     objects = {
         title = titleLabelVar,
         statusLabel = statusLabel,
-        logsFrame = logsFrame
+        logsFrame = logsFrame,
+        size = logsFrame:getSize()
     }
 
     return main, frame, objects
@@ -34,7 +35,7 @@ function APIGUIModule.updateFrame(objects)
 
     for i = logCount, #APIModule.logs do
         for level, LogString in pairs(APIModule.logs[i]) do
-            for _, chunk in ipairs(uteisModule.breakString(LogString, 45)) do
+            for _, chunk in ipairs(uteisModule.breakString(LogString, size-2)) do
                 objects.logsFrame:addLabel():setPosition(2, logLine):setText(chunk):setForeground(MyColors[level])
                 logLine = logLine + 1
             end
