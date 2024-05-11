@@ -91,6 +91,6 @@
 
 -- -- shell.run("/CC/src/API/API.lua")
 
-local rfSystem = peripheral.wrap("rsBridge_0")
+local rfSystem = peripheral.wrap("rsBridge")
 if rfSystem == nil then error("RF System not found") end
 print(textutils.serialise(rfSystem.getItem()))
