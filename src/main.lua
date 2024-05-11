@@ -45,7 +45,8 @@ local sub = {
 }
 
 local debugTestInMain = require("/CC/src/Uteis/Debug")
-debugTestInMain.debugFunc({basalt = basalt, main = main, first = true})
+debugFrame = debugTestInMain.debugFunc({basalt = basalt, main = main, first = true})
+debugFrame.debug("MAIN")
 
 local y = 2
 for k,v in pairs(sub) do

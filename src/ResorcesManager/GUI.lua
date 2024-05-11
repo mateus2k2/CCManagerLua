@@ -17,7 +17,8 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     itemLabel = frame:addLabel():setText(""):setPosition(2, 14)
 
     local debugTestInMain = require("/CC/src/Uteis/Debug")
-    debugTestInMain.debugFunc({first = false})
+    debugFrame = debugTestInMain.debugFunc({first = false})
+    debugFrame.debug("GUI")
 
     searchButton:onClick(function(text)
         retorno = resorsesModuleMine.getItemAmount(text)
