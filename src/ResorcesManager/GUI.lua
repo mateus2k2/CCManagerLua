@@ -26,7 +26,11 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
         retorno = resorsesModuleMine.getItemAmount(text)
         itemLabel:setText(retorno)
         debugFrame.debug(uteis.tableToString(text))
-end)
+
+        for key, value in pair(text) do
+            debugFrame.debug(key .. " = " .. value)
+        end
+    end)
 
     local objects = {
         title = titleLabel,
