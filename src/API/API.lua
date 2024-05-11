@@ -38,7 +38,7 @@ local function startAPI()
             logs[#logs + 1] = {INFO = "Request Made: " .. uteisModule.tableToString(obj)} 
             handleRequest(obj)
         end
-        os.sleep(1)
+        os.sleep(0.5)
     end
     
 end 
