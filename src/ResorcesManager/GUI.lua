@@ -33,7 +33,7 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
                 for key1, value2 in pairs(value) do
                     debugFrame.debug(tostring(key1) .. " = " .. tostring(value2))
                 end
-
+            end
         end
     end)
 
