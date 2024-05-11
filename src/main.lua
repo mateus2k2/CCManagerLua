@@ -75,10 +75,12 @@ end
 ----------------------------------------
 
 function updateFrame()
-    if sub[indexOnTop].updateFunction then
-        sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
+    while true do
+        if sub[indexOnTop].updateFunction then
+            sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
+        end
+        os.sleep(1)
     end
-    os.sleep(1)
 end
 
 parallel.waitForAny(updateFrame, API.startAPI, basalt.autoUpdate)
