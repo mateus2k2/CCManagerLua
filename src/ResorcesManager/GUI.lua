@@ -25,7 +25,6 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     searchButton:onClick(function(text)
         retorno = resorsesModuleMine.getItemAmount(text)
         itemLabel:setText(retorno)
-        debugFrame.debug(uteis.tableToString(text))
 
         for key, value in pair(text) do
             debugFrame.debug(key .. " = " .. value)
