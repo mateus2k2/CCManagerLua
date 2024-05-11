@@ -25,7 +25,7 @@ local function handleRequest(request)
         logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(request.id) .. " Got: " .. (response.readAll())} 
         response.close()
     else
-        logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id) .. " Got: " .. (response.readAll())} 
+        logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id)} 
     end
 end
 
