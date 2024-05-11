@@ -8,8 +8,6 @@ function handleGeneratorButtom()
     else 
         generatorModule.turnOnGenerator()
     end
-
-    return generatorModule.getStateGenerator()
 end
 
 function generatorGUIModule.createGeneratorFrame(main)
