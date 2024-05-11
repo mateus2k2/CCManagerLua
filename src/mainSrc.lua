@@ -87,17 +87,19 @@
 
 -- shell.run("/CC/src/API/API.lua")
 
+
 local basalt = require("/Modules/basalt2")
 local main = basalt.getMainFrame()
+
+local debugMenu = require('/Modules/basaltDebug'):setBasalt(basalt)
+debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
 
 -- Create a button
 local button = main:addButton():setText("Click me")
 
-basalt.openDebugPanel(true)
-
 -- Attach an onClick event to the button
 button:onClick(function()
-    basalt.debug("Button clicked!")
+    debugFrame.debug("Button clicked!")
 end)
 
 basalt.run()
