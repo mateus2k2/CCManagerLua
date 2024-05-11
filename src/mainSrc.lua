@@ -4,7 +4,7 @@ indexOnTop = 1
 --MODULES
 ----------------------------------------
 
-local basalt = require("/Modules/basalt")
+local basalt = require("/CC/Modules/basalt")
 
 local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
 local resorcesManagerGUIModule = require("/CC/src/ResorcesManager/GUI")
