@@ -1,6 +1,9 @@
 local resorcesManagerGUIModule = {}
 local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
 
+local debugTestInMain = require("/CC/src/Uteis/Debug")
+debugFrame = debugTestInMain.debugFunc({first = false})
+
 function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     local w, h = main:getSize()
     local pageTitle = "Resorces Manager"
@@ -15,15 +18,13 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     local searchButton = frame:addButton():setText("Search"):setPosition(2, 9):setBackground(colors.red):setSize(10, 1)
 
     itemLabel = frame:addLabel():setText(""):setPosition(2, 14)
-
-    local debugTestInMain = require("/CC/src/Uteis/Debug")
-    debugFrame = debugTestInMain.debugFunc({first = false})
-    debugFrame.debug("GUI")
+    
 
     searchButton:onClick(function(text)
         retorno = resorsesModuleMine.getItemAmount(text)
         itemLabel:setText(retorno)
-    end)
+        debugFrame.debug(retorno)
+end)
 
     local objects = {
         title = titleLabel,

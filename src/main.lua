@@ -48,8 +48,6 @@ local sub = {
 }
 
 
-debugFrame.debug("MAIN")
-
 local y = 2
 for k,v in pairs(sub) do
     sidebar:addButton():setText(v.title)
