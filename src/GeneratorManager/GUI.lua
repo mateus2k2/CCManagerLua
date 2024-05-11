@@ -48,8 +48,6 @@ function generatorGUIModule.updateFrame(objects)
             end
             generatorModule.releaseLock()
         end
-    end
-
         os.sleep(1)
     end
 end
