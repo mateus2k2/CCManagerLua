@@ -17,7 +17,7 @@ function generatorGUIModule.createGeneratorFrame(main)
     titleLabelVar = frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
     batteryLabelVar = frame:addLabel():setText("Battery Energy: " .. generatorModule.getBatteryFillLevel()):setPosition(2, 5)
 
-    local generatorButtom = frame:addButton():setText("Generator is"):setPosition(pageTitleX, 8):onClick(handleGeneratorButtom):setBackground(colors.red)
+    local generatorButtom = frame:addButton():setText("Generator is"):setPosition(pageTitleX, 8):onClick(handleGeneratorButtom):setBackground(colors.red):setBorder(colors.white)
 
 
     objects = {
