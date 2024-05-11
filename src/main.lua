@@ -93,4 +93,4 @@
 
 local rfSystem = peripheral.find("rsBridge")
 if rfSystem == nil then error("RF System not found") end
-print(rfSystem.getItem({name = "iron"}))
+print(rfSystem.getItem({name = "minecraft:iron"}))
