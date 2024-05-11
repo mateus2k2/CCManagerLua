@@ -2334,7 +2334,7 @@ dc.writeLine("[Basalt]["..
 os.date("%Y-%m-%d %H:%M:%S").."][".. (bc and bc or cb)..
 "]: "..tostring(ac))dc.close()end}return setmetatable({},db)end
 aa["libraries"]["process"]=function(...)local ab={}local bb={}local cb=0
-local db=dofile("rom/modules/main/app/CC/require.lua").make
+local db=dofile("rom/modules/main/cc/require.lua").make
 function bb:new(_c,ac,bc,...)local cc={...}bc=bc or{}
 local dc=setmetatable({path=_c},{__index=self})dc.window=ac;ac.current=term.current;ac.redirect=term.redirect
 dc.processId=cb

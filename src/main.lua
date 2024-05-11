@@ -4,15 +4,15 @@ indexOnTop = 1
 --MODULES
 ----------------------------------------
 
-local basalt = require("/app/CC/Modules/basaltMaster")
-local debugMenu = require('/app/CC/Modules/basaltDebug'):setBasalt(basalt)
+local basalt = require("/CC/Modules/basaltMaster")
+local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
-local generatorGUIModule = require("/app/CC/src/GeneratorManager/GUI")
-local resorcesManagerGUIModule = require("/app/CC/src/ResorcesManager/GUI")
-local APIGUIModule = require("/app/CC/src/API/GUI")
-local mainGUIModule = require("/app/CC/src/mainGUI")
+local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
+local resorcesManagerGUIModule = require("/CC/src/ResorcesManager/GUI")
+local APIGUIModule = require("/CC/src/API/GUI")
+local mainGUIModule = require("/CC/src/mainGUI")
 
-local API = require("/app/CC/src/API/API")
+local API = require("/CC/src/API/API")
 
 ----------------------------------------
 --MAIN FRAME
@@ -89,4 +89,4 @@ parallel.waitForAny(updateFrame, API.startAPI, basalt.autoUpdate)
 -- --TESTES
 -- ----------------------------------------
 
--- shell.run("/app/CC/src/API/API.lua")
+-- shell.run("/CC/src/API/API.lua")

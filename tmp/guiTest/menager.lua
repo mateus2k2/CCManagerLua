@@ -1,5 +1,5 @@
-local basalt = require("/app/CC/Modules/basalt")
-local debugMenu = require('/app/CC/Modules/basaltDebug'):setBasalt(basalt)
+local basalt = require("/CC/Modules/basalt")
+local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
 local lampInteractor = require("lamp")
 
