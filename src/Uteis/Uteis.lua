@@ -33,11 +33,11 @@ function tableToString(tbl)
     return result
 end
 
-local function breakString(str)
+local function breakString(str, size)
     local chunks = {}
     
-    for i = 1, #str, 47 do
-        table.insert(chunks, str:sub(i, i + 46))
+    for i = 1, #str, size do
+        table.insert(chunks, str:sub(i, i + (size-1)))
     end
 
     return chunks
