@@ -3,13 +3,13 @@ local generatorGUIModule = {}
 local generatorModule = require("/CC/src/GeneratorManager/Generator")
 
 function handleGeneratorButtom()
-    if gerenatorModule.getStateGenerator() then 
-        gerenatorModule.turnOffGenerator()
+    if generatorModule.getStateGenerator() then 
+        generatorModule.turnOffGenerator()
     else 
-        gerenatorModule.turnOnGenerator()
+        generatorModule.turnOnGenerator()
     end
 
-    return gerenatorModule.getStateGenerator()
+    return generatorModule.getStateGenerator()
 end
 
 function generatorGUIModule.createGeneratorFrame(main)
