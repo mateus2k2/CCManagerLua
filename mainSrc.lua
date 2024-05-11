@@ -91,15 +91,15 @@
 -- --BASALT 2.0
 -- ----------------------------------------
 
--- local basalt = require("/Modules/basalt2")
--- local main = basalt.getMainFrame()
+local basalt = require("/Modules/basalt2")
+local main = basalt.getMainFrame()
 
--- -- Create a button
--- local button = main:addButton():setText("Click me")
+-- Create a button
+local button = main:addButton():setText("Click me")
 
--- -- Attach an onClick event to the button
--- button:onClick(function()
---     basalt.debug("Button clicked!")
--- end)
+-- Attach an onClick event to the button
+button:onClick(function()
+    basalt.debug("Button clicked!")
+end)
 
--- basalt.run()
+basalt.run()
