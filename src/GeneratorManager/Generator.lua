@@ -15,15 +15,15 @@ function generatorModule.getBatteryMaxFillLevel()
 end
 
 function generatorModule.turnOnGenerator()
-    integrator.setOutput("south", true)
+    transmiter.setOutput("south", true)
 end
 
 function generatorModule.turnOffGenerator()
-    integrator.setOutput("south", false)
+    transmiter.setOutput("south", false)
 end
 
 function generatorModule.getStateGenerator()
-    valor = integrator.getAnalogInput("south")
+    valor = transmiter.getAnalogInput("south")
     return (valor > 0)
 end
 
