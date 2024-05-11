@@ -44,7 +44,7 @@ main, frameAPI, APIObjects = APIGUIModule.createAPIFrame(main)
 main, frameMain = mainGUIModule.createMainFrame(main)
 
 local sub = {
-    {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = nil},
+    {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = mainGUIModule.updateFrame},
     {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = APIGUIModule.updateFrame},
     {index = 3, frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = generatorGUIModule.updateFrame},
     {index = 4, frame = frameResorces:hide(),  title = "Resorses",  objects = resoursesObjects, updateFunction = resorcesManagerGUIModule.updateFrame},
@@ -74,9 +74,7 @@ end
 
 function updateFrame()
     while true do
-        if sub[indexOnTop].updateFunction then
-            sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
-        end
+        sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
         os.sleep(1)
     end
 end

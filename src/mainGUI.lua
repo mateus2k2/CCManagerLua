@@ -13,4 +13,7 @@ function mainGUIModule.createMainFrame(main)
     return main, frame
 end
 
+function mainGUIModule.updateFrame()
+end
+
 return mainGUIModule
