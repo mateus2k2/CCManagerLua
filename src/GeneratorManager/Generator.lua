@@ -6,6 +6,20 @@ if inductionMatrix == nil then error("Batery not found") end
 transmiter = peripheral.find("redstoneIntegrator")
 if transmiter == nil then error("Transmiter not found") end
 
+local lock = false
+
+function generatorModule.getLock()
+    if lock == false then
+        lock = true
+        return true
+    else
+        return false
+end
+
+function generatorModule.releaseLock()
+    lock = false
+end
+
 function generatorModule.getBatteryFillLevel()
     return inductionMatrix.getEnergy()
 end

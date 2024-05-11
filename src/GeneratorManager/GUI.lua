@@ -3,10 +3,13 @@ local generatorGUIModule = {}
 local generatorModule = require("/CC/src/GeneratorManager/Generator")
 
 function handleGeneratorButtom()
-    if generatorModule.getStateGenerator() then 
-        generatorModule.turnOffGenerator()
-    else 
-        generatorModule.turnOnGenerator()
+    if generatorModule.getLock() then
+        if generatorModule.getStateGenerator() then 
+            generatorModule.turnOffGenerator()
+        else 
+            generatorModule.turnOnGenerator()
+        end
+        generatorModule.releaseLock()
     end
 end
 
@@ -37,11 +40,15 @@ function generatorGUIModule.updateFrame(objects)
     while true do
         objects.batteryLavel:setText("Battery Energy: " .. generatorModule.getBatteryFillLevel())
 
-        if generatorModule.getStateGenerator() then 
-            objects.generatorButtom:setText("Generator is ON"):setBackground(colors.green)
-        else
-            objects.generatorButtom:setText("Generator is OFF"):setBackground(colors.red)
+        if generatorModule.getLock() then
+            if generatorModule.getStateGenerator() then 
+                objects.generatorButtom:setText("Generator is ON"):setBackground(colors.green)
+            else
+                objects.generatorButtom:setText("Generator is OFF"):setBackground(colors.red)
+            end
+            generatorModule.releaseLock()
         end
+    end
 
         os.sleep(1)
     end
