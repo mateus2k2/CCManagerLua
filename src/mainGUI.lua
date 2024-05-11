@@ -1,6 +1,7 @@
 local mainGUIModule = {}
 
 function mainGUIModule.createMainFrame(main)
+    local w, h = main:getSize()
     local pageTitle = "Main Page"
     local pageTitleLength = string.len(pageTitle)
     local pageTitleX = math.floor(w / 2 - pageTitleLength / 2)

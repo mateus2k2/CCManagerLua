@@ -2,6 +2,7 @@ local resorcesManagerGUIModule = {}
 local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
 
 function resorcesManagerGUIModule.createResorcesManagerFrame(main)
+    local w, h = main:getSize()
     local pageTitle = "Main Page"
     local pageTitleLength = string.len(pageTitle)
     local pageTitleX = math.floor(w / 2 - pageTitleLength / 2)
