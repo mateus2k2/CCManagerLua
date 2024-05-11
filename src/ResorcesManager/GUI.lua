@@ -1,6 +1,11 @@
 local resorcesManagerGUIModule = {}
 local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
 
+function handleSearchButton()
+
+end
+
+
 function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     local w, h = main:getSize()
     local pageTitle = "Resorces Manager"
@@ -11,7 +16,20 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     
     frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
 
-    return main, frame
+    local searchField = frame:addButton():addTextfield():setPosition(pageTitleX, 8):setBorder(colors.white):setSize(19, 3)
+    local searchButton = frame:addButton():setText("Search"):setPosition(pageTitleX, 8):onClick(handleSearchButton):setBackground(colors.red):setBorder(colors.white):setSize(19, 3)
+
+    local objects = {
+        title = titleLabel,
+    }
+
+    return main, frame, objects
+end
+
+function resorcesManagerGUIModule.updateFrame(objects)
+    while true do
+        os.sleep(1)
+    end
 end
 
 return resorcesManagerGUIModule
