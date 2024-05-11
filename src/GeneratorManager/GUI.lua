@@ -39,7 +39,7 @@ function generatorGUIModule.updateFrame(objects)
     while true do
         objects.batteryLavel:setText("Battery Energy: " .. generatorModule.getBatteryFillLevel())
 
-        if gerenatorModule.getStateGenerator() then 
+        if generatorModule.getStateGenerator() then 
             objects.generatorButtom:setText("Generator is ON"):setBackground(colors.green)
         else
             objects.generatorButtom:setText("Generator is OFF"):setBackground(colors.red)
