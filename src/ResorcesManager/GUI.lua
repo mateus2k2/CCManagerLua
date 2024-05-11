@@ -1,5 +1,5 @@
 local resorcesManagerGUIModule = {}
-local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
+local resorsesModuleMine = require("/app/CC/src/ResorcesManager/Resorces")
 
 function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}")
