@@ -1,3 +1,5 @@
+local pretty = require "cc.pretty"
+
 local resorcesManagerGUIModule = {}
 local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
 
@@ -23,7 +25,7 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     searchButton:onClick(function(text)
         retorno = resorsesModuleMine.getItemAmount(text)
         itemLabel:setText(retorno)
-        debugFrame.debug(text)
+        debugFrame.debug(pretty.pretty_print(text))
 end)
 
     local objects = {
