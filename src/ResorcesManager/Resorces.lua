@@ -12,8 +12,8 @@ function resorsesModuleMine.getItem(request)
     return returnVar
 end
 
-function resorsesModuleMine.getItemAmount(name)
-    local returnVar = rfSystem.getItem({name = name})
+function resorsesModuleMine.getItemAmount(txtName)
+    local returnVar = rfSystem.getItem({name = txtName})
 
     if returnVar == nil then return "eror" end
     if returnVar == "nil" then return "Item Not Found" end

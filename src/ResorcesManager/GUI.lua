@@ -35,3 +35,5 @@ function resorcesManagerGUIModule.updateFrame(objects)
 end
 
 return resorcesManagerGUIModule
+
+-- minecraft:iron_ingot
