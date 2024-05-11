@@ -1,17 +1,1 @@
-
-local args = {...}
-
-local basaltPath = args[1] or "basalt"
-
-local defaultPath = package.path
-local format = "path;/path/?.lua;/path/?/init.lua;"
-
-local main = format:gsub("path", basaltPath)
-local eleFolder = format:gsub("path", basaltPath.."/elements")
-local extFolder = format:gsub("path", basaltPath.."/extensions")
-local libFolder = format:gsub("path", basaltPath.."/libraries")
-package.path = defaultPath..main..eleFolder..extFolder..libFolder.."rom/?"
-local basalt = require("main")
-package.path = defaultPath
-
-return basalt
+local _b={...}local ab=_b[1]or"basalt"local bb=package.path local cb="path;/path/?.lua;/path/?/init.lua;"local db=cb:gsub("path",ab) local _c=cb:gsub("path",ab.."/elements")local ac=cb:gsub("path",ab.."/extensions")local bc=cb:gsub("path",ab.. "/libraries")package.path=bb..db.._c.. ac..bc.."rom/?" local cc=require("main")package.path=bb;return cc

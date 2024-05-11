@@ -87,7 +87,7 @@
 
 -- -- shell.run("/CC/src/API/API.lua")
 
-local basalt = require("/CC/basalt")
+local basalt = require("basalt")
 -- local main = basalt.getMainFrame()
 
 -- -- Create a button
