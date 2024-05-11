@@ -5,7 +5,6 @@ indexOnTop = 1
 ----------------------------------------
 
 local basalt = require("/CC/Modules/basaltMaster")
-local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
 
 local generatorGUIModule = require("/CC/src/GeneratorManager/GUI")
 local resorcesManagerGUIModule = require("/CC/src/ResorcesManager/GUI")
@@ -20,12 +19,6 @@ local API = require("/CC/src/API/API")
 
 local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 local w, h = main:getSize()
-
-----------------------------------------
---DEBUG FRAME
-----------------------------------------
-
-local debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
 
 ----------------------------------------
 --SIDE BAR
@@ -53,8 +46,6 @@ local sub = {
 
 local y = 2
 for k,v in pairs(sub) do
-    -- debugFrame.debug(k)
-
     sidebar:addButton():setText(v.title)
     :setBackground(colors.black)
     :setForeground(colors.lightGray)

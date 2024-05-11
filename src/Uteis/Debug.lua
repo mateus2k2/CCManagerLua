@@ -1,0 +1,3 @@
+-- local debugMenu = require('/CC/Modules/basaltDebug'):setBasalt(basalt)
+-- local debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
+-- debugFrame.debug(k)
