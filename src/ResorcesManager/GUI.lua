@@ -28,12 +28,6 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
 
         for key, value in pairs(text) do
             debugFrame.debug(tostring(key) .. " = " .. tostring(value))
-
-            if tostring(key) == "__index" then
-                for key1, value2 in pairs(value) do
-                    debugFrame.debug(tostring(key1) .. " = " .. tostring(value2))
-                end
-            end
         end
     end)
 
