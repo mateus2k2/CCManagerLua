@@ -39,9 +39,6 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
 end
 
 function resorcesManagerGUIModule.updateFrame(objects)
-    while true do
-        os.sleep(1)
-    end
 end
 
 return resorcesManagerGUIModule

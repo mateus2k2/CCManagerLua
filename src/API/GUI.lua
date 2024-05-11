@@ -30,21 +30,18 @@ function APIGUIModule.createAPIFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
-    while true do
-        objects.statusLabel:setText("STATUS = " .. APIModule.status())
+    objects.statusLabel:setText("STATUS = " .. APIModule.status())
 
-        for i = logCount, #APIModule.logs do
-            for level, LogString in pairs(APIModule.logs[i]) do
-                for _, chunk in ipairs(uteisModule.breakString(LogString, 45)) do
-                    objects.logsFrame:addLabel():setPosition(2, logLine):setText(chunk):setForeground(MyColors[level])
-                    logLine = logLine + 1
-                end
-                objects.logsFrame:addLabel():setPosition(2, logLine):setText(""):setForeground(MyColors[level])
+    for i = logCount, #APIModule.logs do
+        for level, LogString in pairs(APIModule.logs[i]) do
+            for _, chunk in ipairs(uteisModule.breakString(LogString, 45)) do
+                objects.logsFrame:addLabel():setPosition(2, logLine):setText(chunk):setForeground(MyColors[level])
                 logLine = logLine + 1
-                logCount = logCount + 1
             end
+            objects.logsFrame:addLabel():setPosition(2, logLine):setText(""):setForeground(MyColors[level])
+            logLine = logLine + 1
+            logCount = logCount + 1
         end
-        os.sleep(1)
     end
 end
 

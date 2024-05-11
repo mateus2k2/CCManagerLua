@@ -35,18 +35,15 @@ function generatorGUIModule.createGeneratorFrame(main)
 end
 
 function generatorGUIModule.updateFrame(objects)
-    while true do
-        objects.batteryLabel:setText("Battery Energy: " .. Generator.getBatteryFillLevel())
+    objects.batteryLabel:setText("Battery Energy: " .. Generator.getBatteryFillLevel())
 
-        if Generator.getLock() then
-            if Generator.getStateGenerator() then 
-                objects.generatorButton:setText("Generator is ON"):setBackground(colors.green)
-            else
-                objects.generatorButton:setText("Generator is OFF"):setBackground(colors.red)
-            end
-            Generator.releaseLock()
+    if Generator.getLock() then
+        if Generator.getStateGenerator() then 
+            objects.generatorButton:setText("Generator is ON"):setBackground(colors.green)
+        else
+            objects.generatorButton:setText("Generator is OFF"):setBackground(colors.red)
         end
-        os.sleep(1)
+        Generator.releaseLock()
     end
 end
 
