@@ -23,7 +23,7 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     searchButton:onClick(function(text)
         retorno = resorsesModuleMine.getItemAmount(text)
         itemLabel:setText(retorno)
-        debugFrame.debug(retorno)
+        debugFrame.debug(text)
 end)
 
     local objects = {
