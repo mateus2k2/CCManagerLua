@@ -87,19 +87,19 @@ parallel.waitForAny(updateFrame, API.startAPI, basalt.autoUpdate)
 
 -- shell.run("/CC/API/API.lua")
 
+-- ----------------------------------------
+-- --BASALT 2.0
+-- ----------------------------------------
 
 -- local basalt = require("/Modules/basalt2")
 -- local main = basalt.getMainFrame()
-
--- local debugMenu = require('/Modules/basaltDebug'):setBasalt(basalt)
--- debugFrame = debugMenu:createDebugMenu(main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
 
 -- -- Create a button
 -- local button = main:addButton():setText("Click me")
 
 -- -- Attach an onClick event to the button
 -- button:onClick(function()
---     debugFrame.debug("Button clicked!")
+--     basalt.debug("Button clicked!")
 -- end)
 
 -- basalt.run()
