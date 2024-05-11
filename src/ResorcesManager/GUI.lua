@@ -26,7 +26,7 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
         retorno = resorsesModuleMine.getItemAmount(text)
         itemLabel:setText(retorno)
 
-        for key, value in pair(text) do
+        for key, value in pairs(text) do
             debugFrame.debug(key .. " = " .. value)
         end
     end)
