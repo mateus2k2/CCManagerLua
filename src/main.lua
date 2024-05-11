@@ -24,7 +24,7 @@ local debugTestInMain = require("/CC/src/Uteis/Debug")
 debugFrame = debugTestInMain.debugFunc({basalt = basalt, main = main, first = true})
 
 -- local monitor = peripheral.wrap("top")  
--- local monitorFrame = basalt.addMonitor()
+local monitorFrame = basalt.addMonitor()
 -- monitorFrame:setMonitor(monitor)
 
 local monitorGroup = {
