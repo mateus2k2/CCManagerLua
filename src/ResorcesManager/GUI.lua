@@ -27,7 +27,7 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
         itemLabel:setText(retorno)
 
         for key, value in pairs(text) do
-            debugFrame.debug(key .. " = " .. value)
+            debugFrame.debug(tostring(key) .. " = " .. tostring(value))
         end
     end)
 
