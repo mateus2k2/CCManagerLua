@@ -12,6 +12,7 @@ function debugModule.debugFunc(obj)
         debugFrame = debugMenu:createDebugMenu(obj.main, {'debugMenuFrame', 'debugMenuTextbox', 'debugMenuCheckbox'})
     else    
         return debugFrame
+    end
 end
 
 return debugModule
