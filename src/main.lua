@@ -20,6 +20,9 @@ local API = require("/CC/src/API/API")
 local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 local w, h = main:getSize()
 
+local debugTestInMain = require("/CC/src/Uteis/Debug")
+debugFrame = debugTestInMain.debugFunc({basalt = basalt, main = main, first = true})
+
 ----------------------------------------
 --SIDE BAR
 ----------------------------------------
@@ -44,8 +47,7 @@ local sub = {
     {index = 4, frame = frameResorces:hide(),  title = "Resorses",  objects = resoursesObjects, updateFunction = resorcesManagerGUIModule.updateFrame},
 }
 
-local debugTestInMain = require("/CC/src/Uteis/Debug")
-debugFrame = debugTestInMain.debugFunc({basalt = basalt, main = main, first = true})
+
 debugFrame.debug("MAIN")
 
 local y = 2
