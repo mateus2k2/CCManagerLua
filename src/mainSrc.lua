@@ -93,6 +93,8 @@ local main = basalt.getMainFrame()
 -- Create a button
 local button = main:addButton():setText("Click me")
 
+basalt.openDebugPanel(true)
+
 -- Attach an onClick event to the button
 button:onClick(function()
     basalt.debug("Button clicked!")
