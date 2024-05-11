@@ -7,7 +7,7 @@ function resorsesModuleMine.getItem(request)
     local returnVar = rfSystem.getItem({name = request.name})
 
     if returnVar == nil then return {"eror"} end
-    if returnVar == nil then return {"Item Not Found"} end
+    if returnVar == "nil" then return {"Item Not Found"} end
 
     return returnVar
 end
