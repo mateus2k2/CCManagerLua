@@ -43,6 +43,7 @@ function generatorGUIModule.updateFrame(objects)
             objects.generatorButtom:setText("Generator is ON"):setBackground(colors.green)
         else
             objects.generatorButtom:setText("Generator is OFF"):setBackground(colors.red)
+        end
 
         os.sleep(1)
     end
