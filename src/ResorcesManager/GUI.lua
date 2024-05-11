@@ -3,7 +3,7 @@ local resorsesModuleMine = require("/CC/src/ResorcesManager/Resorces")
 
 function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     local w, h = main:getSize()
-    local pageTitle = "Main Page"
+    local pageTitle = "Resorces Manager"
     local pageTitleLength = string.len(pageTitle)
     local pageTitleX = math.floor(w / 2 - pageTitleLength / 2)
 
@@ -11,7 +11,6 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
     
     frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
 
-    -- frame:addLabel():setText("Iron: " .. resorsesModuleMine.getIron()):setPosition(2, 3)
     return main, frame
 end
 
