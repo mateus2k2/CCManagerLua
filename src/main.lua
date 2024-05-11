@@ -17,14 +17,10 @@ local API = require("/CC/src/API/API")
 --MAIN FRAME
 ----------------------------------------
 
--- local monitors = {
---     [1] = {"monitor_7", "monitor_6"},
---     [2] = {"monitor_8", "monitor_9"}
--- }
-local monitors = peripheral.wrap("monitor_7") 
-local main = basalt.addMonitor():setMonitor(monitors):setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
+-- local monitors = peripheral.wrap("monitor_7") 
+-- local main = basalt.addMonitor():setMonitor(monitors):setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 
--- local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
+local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
 local w, h = main:getSize()
 
 local debugTestInMain = require("/CC/src/Uteis/Debug")
