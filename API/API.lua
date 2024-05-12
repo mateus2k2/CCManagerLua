@@ -23,7 +23,7 @@ local function handleRequest(request)
         end
 
     else
-        logs[#logs + 1] = {ERROR = "Eror in the main handleRequest = " .. textutils.serialiseJSON(responseObj.errorType)}
+        logs[#logs + 1] = {ERROR = "Eror in the main handleRequest. Missing request.id or request.body.type or request.body"}
         responseObj = {result = "Eror in the main handleRequest. Missing request.id or request.body.type or request.body"}
     end
 
