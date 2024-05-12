@@ -13,7 +13,10 @@ local function printTable(tbl, indent)
 end
 
 function tableToString(tbl)
+    if tbl == nil then return "" end
+
     local result = "{"
+
     local function convert(t)
         for k, v in pairs(t) do
             result = result .. " " .. tostring(k) .. " = "
