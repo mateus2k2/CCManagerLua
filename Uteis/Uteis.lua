@@ -16,7 +16,7 @@ function tableToString(tbl)
     local result = "{"
     local function convert(t)
         for k, v in pairs(t) do
-            result = result .. " " .. tostring(k) .. "= "
+            result = result .. " " .. tostring(k) .. " = "
 
             if type(v) == "table" then
                 result = result .. tableToString(v)
