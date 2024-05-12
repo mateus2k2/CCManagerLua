@@ -10,7 +10,7 @@ local logs = {}
 local function handleRequest(request)
     local responseObj = nil
 
-    if request.id and request.type and request.body then 
+    if request.id and request.body.type and request.body then 
         if request.body.type == "resource" then
             responseObj = resorsesModuleAPI.handleRequest(request.body)
         elseif request.body.type == "generator" then
