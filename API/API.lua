@@ -16,8 +16,15 @@ local function handleRequest(request)
         elseif request.body.type == "generator" then
             responseObj = generatorModuleAPI.handleRequest(request.body)
         end
+
+        if responseObj.result == "Error" then 
+            logs[#logs + 1] = {ERROR = "Eror processing request = " .. textutils.serialiseJSON(responseObj.errorType)}
+            responseObj = {result = textutils.serialiseJSON(responseObj.errorType)}
+        end
+
     else
-        responseObj = {result = "Eror in the main handleRequest"}
+        logs[#logs + 1] = {ERROR = "Eror in the main handleRequest = " .. textutils.serialiseJSON(responseObj.errorType)}
+        responseObj = {result = "Eror in the main handleRequest. Missing request.id or request.body.type or request.body"}
     end
 
     local responseStr = textutils.serialiseJSON(responseObj)

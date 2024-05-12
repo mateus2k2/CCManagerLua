@@ -3,9 +3,9 @@ local resorsesModuleAPI = {}
 local resorsesModuleMine = require("/CC/ResorcesManager/Resorces")
 
 function resorsesModuleAPI.handleRequest(request)
-    if(request.name == nil) then result = "Eroor in the resorsesModuleAPI.handleRequest" end
+    if(request.name == nil) then {result = "ERROR", errorType = "Error in the resorsesModuleAPI.handleRequest"} end
 
-    return resorsesModuleMine.getItem(request.name)
+    return {result = resorsesModuleMine.getItem(request.name)}
 end
 
 return resorsesModuleAPI
