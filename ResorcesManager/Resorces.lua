@@ -3,8 +3,8 @@ local resorsesModuleMine = {}
 local rfSystem = peripheral.find("rsBridge")
 if rfSystem == nil then error("RF System not found") end
 
-function resorsesModuleMine.getItem(request)
-    local returnVar = rfSystem.getItem({name = request.name})
+function resorsesModuleMine.getItem(itemFilter)
+    local returnVar = rfSystem.getItem({name = itemFilter})
 
     if returnVar == nil then return {"eror"} end
     if returnVar == "nil" then return {"Item Not Found"} end
