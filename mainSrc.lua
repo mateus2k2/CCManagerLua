@@ -30,9 +30,9 @@ debugFrame = debugTestInMain.debugFunc({basalt = basalt, main = main, first = tr
 --SIDE BAR
 ----------------------------------------
 
-local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(w, 1):setSize(15, "parent.h"):setZ(25):setDirection("vertical")
+local sidebar = main:addScrollableFrame():setBackground(colors.gray):setPosition(w, 1):setSize(15, "{parent.h}"):setZ(25):setDirection("vertical")
 :onGetFocus(function(self)
-    self:setPosition("parent.w - (self.w-1) - 1", 1)
+    self:setPosition("{parent.w - (self.w-1) - 1}", 1)
 end)
 :onLoseFocus(function(self)
     self:setPosition(w, 1)
@@ -56,7 +56,7 @@ for k,v in pairs(sub) do
     sidebar:addButton():setText(v.title)
     :setBackground(colors.black)
     :setForeground(colors.lightGray)
-    :setSize("parent.w - 3", 3)
+    :setSize("{parent.w - 3}", 3)
     :setPosition(2, y)
     :onClick(function()
         for a, b in pairs(sub)do
