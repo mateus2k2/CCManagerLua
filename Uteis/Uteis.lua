@@ -14,6 +14,9 @@ end
 
 function tableToString(tbl)
     local result = "{"
+    
+    if tbl == nil then return result = ""
+
     local function convert(t)
         for k, v in pairs(t) do
             result = result .. " " .. tostring(k) .. " = "
