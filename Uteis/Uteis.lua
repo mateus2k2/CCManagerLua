@@ -13,7 +13,7 @@ local function printTable(tbl, indent)
 end
 
 function tableToString(tbl)
-    local result = "{"
+    local result = ""
     local function convert(t)
         for k, v in pairs(t) do
             result = result .. " " .. tostring(k) .. "= "
@@ -29,7 +29,7 @@ function tableToString(tbl)
     end
     convert(tbl)
     result = result:sub(1, -2) -- Remove the last comma
-    result = result .. "}"
+    result = result .. ""
     return result
 end
 
