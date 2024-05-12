@@ -10,10 +10,14 @@ local logs = {}
 local function handleRequest(request)
     local responseObj = nil
 
-    if request.body.type == "resource" then
-        responseObj = resorsesModuleAPI.handleRequest(request.body)
-    elseif request.body.type == "generator" then
-        responseObj = generatorModuleAPI.handleRequest(request.body)
+    if request.id && request.type && request.body then 
+        if request.body.type == "resource" then
+            responseObj = resorsesModuleAPI.handleRequest(request.body)
+        elseif request.body.type == "generator" then
+            responseObj = generatorModuleAPI.handleRequest(request.body)
+        end
+    else
+        responseObj = {result = "Eror in the main handleRequest"}
     end
 
     local responseStr = textutils.serialiseJSON(responseObj)
