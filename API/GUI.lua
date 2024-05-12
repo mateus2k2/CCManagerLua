@@ -13,11 +13,11 @@ function APIGUIModule.createAPIFrame(main)
     local pageTitleLength = string.len(pageTitle)
     local pageTitleX = math.floor(w / 2 - pageTitleLength / 2)
 
-    local frame = main:addFrame():setPosition(1, 1):setSize("parent.w", "parent.h")
+    local frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}")
     
     titleLabelVar = frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
     
-    local logsFrame = frame:addScrollableFrame():setSize("parent.w - 5", "parent.h - 8"):setPosition(2, 5):setBackground(colors.black):setBorder(colors.white)
+    local logsFrame = frame:addScrollableFrame():setSize("{parent.w - 5}", "{parent.h - 8}"):setPosition(2, 5):setBackground(colors.black):setBorder(colors.white)
     statusLabel = frame:addLabel():setText("STATUS"):setPosition(2, 3)
 
     objects = {
