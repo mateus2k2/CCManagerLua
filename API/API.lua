@@ -22,20 +22,23 @@ local function handleRequest(request)
     local response = http.post(url, responseStr, headers)
 
     if response then
-        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(request.id) .. " Got: " .. (response.readAll())} 
+        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(request.id) .. " Got: " .. (response.readAll())}
         response.close()
     else
-        logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id)} 
+        logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id)}
     end
 end
 
 
 local function startAPI()
     while true do
-        request = http.get(serverURL .. "/getOldestRequest")   
-        if request then obj = textutils.unserialiseJSON(request.readAll()) end
+        request = http.get(serverURL .. "/getOldestRequest")
+        if request then 
+            obj = textutils.unserialiseJSON(request.readAll())
+            request.close()
+        end
         if obj then
-            logs[#logs + 1] = {INFO = "Request Made: " .. uteisModule.tableToString(obj)} 
+            logs[#logs + 1] = {INFO = "Request Made: " .. uteisModule.tableToString(obj)}
             handleRequest(obj)
         end
         os.sleep(0.5)
@@ -44,8 +47,9 @@ local function startAPI()
 end 
 
 local function status()
-    request = http.get(serverURL .. "/status")   
+    request = http.get(serverURL .. "/status")
     if request then 
+        request.close()
         return "OK" 
     else
         return "DOWN"
