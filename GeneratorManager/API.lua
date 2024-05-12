@@ -5,7 +5,7 @@ local generatorModule = require("/CC/GeneratorManager/Generator")
 function gerenatorModuleAPI.handleRequest(request)
     local result = nil
 
-    if(request.action == nil) then result = "Eroor in the gerenatorModuleAPI.handleRequest"
+    if(request.action == nil) then result = "Eroor in the gerenatorModuleAPI.handleRequest" end
 
     if(request.action == "getBatteryFillLevel") then
         result = generatorModule.getBatteryFillLevel()    
