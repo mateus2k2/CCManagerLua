@@ -18,7 +18,7 @@ function generatorGUIModule.createGeneratorFrame(main)
     local pageTitle = "Generator Manager"
     local pageTitleX = math.floor(w / 2 - #pageTitle / 2)
 
-    local frame = main:addFrame():setPosition(1, 1):setSize("{parent.w}", "{parent.h}")
+    local frame = main:addFrame():setPosition(1, 1):setSize("parent.w", "parent.h")
     
     local titleLabel = frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
     local batteryLabel = frame:addLabel():setText("Battery Energy: " .. Generator.getBatteryFillLevel()):setPosition(2, 5)
