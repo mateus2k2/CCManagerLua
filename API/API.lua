@@ -18,7 +18,7 @@ local function handleRequest(request)
         end
 
         if responseObj.result == "Error" then 
-            logs[#logs + 1] = {ERROR = "Eror processing request = " .. textutils.serialiseJSON(responseObj.errorType)}
+            logs[#logs + 1] = {ERROR = textutils.serialiseJSON(responseObj.errorType)}
             responseObj = {result = textutils.serialiseJSON(responseObj.errorType)}
         end
 
