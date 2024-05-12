@@ -17,9 +17,8 @@ local function handleRequest(request)
             responseObj = generatorModuleAPI.handleRequest(request.body)
         end
 
-        if responseObj.result == "Error" then 
+        if responseObj.result == "ERROR" then 
             logs[#logs + 1] = {ERROR = "Error processing request = " .. textutils.serialiseJSON(responseObj.errorType)}
-            responseObj = {result = textutils.serialiseJSON(responseObj.errorType)}
         else
             logs[#logs + 1] = {SUCCESS = "Got valid result processing request."}
         end
