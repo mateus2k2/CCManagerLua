@@ -31,7 +31,7 @@ function APIGUIModule.createFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
-    logs = APIModule.getLogs(logCount)
+    logs = APIModule.getLogs(0)
     status = APIModule.getStatus()
     
     objects.statusLabel:setText("STATUS = " .. status)
