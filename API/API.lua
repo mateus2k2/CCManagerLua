@@ -11,7 +11,7 @@ local function handleRequest(request)
     local id = request.id
 
     if id and body and body.type then 
-        if modules[type] then
+        if modules[body.type] then
             responseObj = modules[type].handleRequest(body) 
         else
             responseObj = {result = "ERROR", errorType = "type not found"}
