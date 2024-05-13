@@ -3,7 +3,7 @@ local uteisModule = require("/CC/Uteis/Uteis")
 local serverURL = "http://localhost:5015"
 
 local logs = {}
-local modules = {}
+local myModules = {}
 
 local function handleRequest(request)
     local responseObj = nil
@@ -11,9 +11,8 @@ local function handleRequest(request)
     local id = request.id
 
     if id and body and body.type then 
-        
-        if modules[body.type] then
-            responseObj = modules[body.type].handleRequest(body) 
+        if myModules[body.type] then
+            responseObj = myModules[body.type].handleRequest(body) 
         else
             responseObj = {result = "ERROR", errorType = "type not found"}
         end
@@ -44,7 +43,7 @@ end
 
 
 local function startAPI(toLoad)
-    modules = toLoad
+    myModules = toLoad
 
     while true do
         request = http.get(serverURL .. "/getOldestRequest")
