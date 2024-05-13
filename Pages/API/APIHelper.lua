@@ -17,6 +17,7 @@ function APIHelperModule.getLogs()
     end
 
     file.close()
+    print(logData)
     return logData
 end
 
