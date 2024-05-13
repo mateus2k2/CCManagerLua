@@ -39,9 +39,9 @@ function APIGUIModule.updateFrame(objects)
     
     objects.statusLabel:setText("STATUS = " .. status)
     
-    local debugTestInMain = require("/CC/Uteis/Debug")
-    debugFrame = debugTestInMain.debugFunc({})
-    debugFrame.debug("logCount = " .. logCount .. " #logs = " .. #logs)
+    -- local debugTestInMain = require("/CC/Uteis/Debug")
+    -- debugFrame = debugTestInMain.debugFunc({})
+    -- debugFrame.debug("logCount = " .. logCount .. " #logs = " .. #logs)
 
     for i = 1, #logs do
         for level, LogString in pairs(logs[i]) do
