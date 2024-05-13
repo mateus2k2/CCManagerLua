@@ -78,15 +78,13 @@ end
 ----------------------------------------
 
 function startGUI(GUIModulesToLoad) 
-    GUIModules = APIModulesToLoad 
+    GUIModules = GUIModulesToLoad 
     createGUI() 
     updateFrame()
 
 end
 
 return {
-    createGUI = createGUI,
-    updateFrame = updateFrame,
     basalt = basalt,
     startGUI = startGUI
 }
