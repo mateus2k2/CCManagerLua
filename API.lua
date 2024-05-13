@@ -39,7 +39,7 @@ local function handleRequest(request)
 
     local responseStr = textutils.serialiseJSON(responseObj)
     local url = serverURL .. "/makeResponse/" .. id
-    local headers = { ["Content-Type"] = "application/json", ["Authorization"] = "Bearer " .. apiToken}
+    local headers = { ["Content-Type"] = "application/json", ["Authorization"] = apiToken}
     local response = http.post(url, responseStr, headers)
 
     if response then
@@ -51,7 +51,7 @@ local function handleRequest(request)
 end
 
 local function status()
-    local headers = { ["Authorization"] = "Bearer " .. apiToken}
+    local headers = { ["Authorization"] = apiToken}
     request = http.get(serverURL .. "/status", headers)
     if request then 
         request.close()
@@ -70,7 +70,7 @@ local function startAPI(APIModulesToLoad)
         statusFile.write(statusResult)
         statusFile.close()
 
-        local headers = { ["Authorization"] = "Bearer " .. apiToken}
+        local headers = { ["Authorization"] = apiToken}
         request = http.get(serverURL .. "/getOldestRequest", headers)
 
         if request then 
