@@ -34,8 +34,8 @@ GUIModules = {
 -- ----------------------------------------
 
 parallel.waitForAny(
-    function() GUIModule.startGUI(GUIModules) end,
     function() APIModule.startAPI(APIModules) end,
+    function() GUIModule.startGUI(GUIModules) end,
     function() GUIModule.basalt.autoUpdate() end
 )
 
