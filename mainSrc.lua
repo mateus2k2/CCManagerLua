@@ -9,7 +9,7 @@ local basalt = require("/Modules/basalt")
 local generatorGUIModule = require("/CC/GeneratorManager/GUI")
 local resorcesManagerGUIModule = require("/CC/ResorcesManager/GUI")
 local APIGUIModule = require("/CC/API/GUI")
-local mainPageModule = require("/CC/mainPage")
+local mainPageModule = require("/CC/mainPage/GUI")
 
 local API = require("/CC/API/API")
 
