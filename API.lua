@@ -1,6 +1,8 @@
 local uteisModule = require("/CC/Uteis/Uteis")
 
 local serverURL = "http://localhost:5015"
+local apiToken = "token"
+
 local logFilePath = "/CC/Logs/logs.txt"
 local statusFilePath = "/CC/Logs/APIStatus.txt"
 
@@ -37,7 +39,7 @@ local function handleRequest(request)
 
     local responseStr = textutils.serialiseJSON(responseObj)
     local url = serverURL .. "/makeResponse/" .. id
-    local headers = { ["Content-Type"] = "application/json" }
+    local headers = { ["Content-Type"] = "application/json", ["Authorization"] = "Bearer " .. apiToken}
     local response = http.post(url, responseStr, headers)
 
     if response then
@@ -49,7 +51,8 @@ local function handleRequest(request)
 end
 
 local function status()
-    request = http.get(serverURL .. "/status")
+    local headers = { ["Authorization"] = "Bearer " .. apiToken}
+    request = http.get(serverURL .. "/status", headers)
     if request then 
         request.close()
         return "OK" 
@@ -67,7 +70,9 @@ local function startAPI(APIModulesToLoad)
         statusFile.write(statusResult)
         statusFile.close()
 
-        request = http.get(serverURL .. "/getOldestRequest")
+        local headers = { ["Authorization"] = "Bearer " .. apiToken}
+        request = http.get(serverURL .. "/getOldestRequest", headers)
+
         if request then 
             obj = textutils.unserialiseJSON(request.readAll())
             request.close()
