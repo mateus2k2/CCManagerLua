@@ -29,16 +29,14 @@ GUIModules = {
     mainPageModule = mainPageModule    
 }
 
-mainGUIModule.mainGUI(GUIModules)
-
 -- ----------------------------------------
 -- --ENTRRYPOINT
 -- ----------------------------------------
 
 parallel.waitForAny(
-    function() mainGUIModule.updateFrame() end,
-    function() mainGUIModule.basalt.autoUpdate() end,
-    function() APIModule.startAPI(APIModules) end
+    function() mainGUIModule.startGUI(GUIModules) end,
+    function() APIModule.startAPI(APIModules) end,
+    function() mainGUIModule.basalt.autoUpdate() end
 )
 
 -- ----------------------------------------

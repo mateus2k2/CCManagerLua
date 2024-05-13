@@ -4,8 +4,14 @@ indexOnTop = 1
 sub = nil
 GUIModules = nil
 
-local function mainGUI(GUIModulesToLoad) 
+local function startGUI(GUIModulesToLoad) 
     GUIModules = APIModulesToLoad 
+    createGUI() 
+    updateFrame()
+
+end
+
+local function createGUI() 
 
     ----------------------------------------
     --MAIN FRAME
@@ -74,7 +80,8 @@ function updateFrame()
 end
 
 return {
-    mainGUI = mainGUI,
+    createGUI = createGUI,
     updateFrame = updateFrame,
     basalt = basalt,
+    startGUI = startGUI
 }
