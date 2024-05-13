@@ -12,7 +12,7 @@ local function handleRequest(request)
     local body = request.body
     local id = request.id
 
-    if id and body.type and body then 
+    if id and body and body.type then 
         if body.type == "resource" then
             responseObj = resorsesModuleAPI.handleRequest(body)
         elseif body.type == "generator" then
