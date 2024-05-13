@@ -48,6 +48,15 @@ local function handleRequest(request)
     end
 end
 
+local function status()
+    request = http.get(serverURL .. "/status")
+    if request then 
+        request.close()
+        return "OK" 
+    else
+        return "DOWN"
+    end
+end
 
 local function startAPI(APIModulesToLoad)
     APIModules = APIModulesToLoad
@@ -71,15 +80,6 @@ local function startAPI(APIModulesToLoad)
     end
 end 
 
-local function status()
-    request = http.get(serverURL .. "/status")
-    if request then 
-        request.close()
-        return "OK" 
-    else
-        return "DOWN"
-    end
-end
 
 return {
     startAPI = startAPI,
