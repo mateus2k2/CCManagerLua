@@ -17,7 +17,10 @@ local function handleRequest(request)
             responseObj = resorsesModuleAPI.handleRequest(body)
         elseif body.type == "generator" then
             responseObj = generatorModuleAPI.handleRequest(body)
+        else
+            responseObj = {result = "ERROR", errorType = "type not found"}
         end
+
 
         if responseObj.result == "ERROR" then 
             logs[#logs + 1] = {ERROR = "Error processing request = " .. textutils.serialiseJSON(responseObj.errorType)}
