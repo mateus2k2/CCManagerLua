@@ -7,6 +7,9 @@ local logLine = 2
 local logCount = 1
 MyColors = {SUCCESS = colors.green, ERROR = colors.red, INFO = colors.yellow}
 
+local debugTestInMain = require("/CC/Uteis/Debug")
+debugFrame = debugTestInMain.debugFunc({basalt = basalt, main = main, first = false})
+
 function APIGUIModule.createFrame(main)
     local w, h = main:getSize()
     local pageTitle = "Logs API Page"
@@ -31,12 +34,12 @@ function APIGUIModule.createFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
-    logs = APIModule.getLogs(logCount)
+    logs = APIModule.getLogs(0)
     status = APIModule.getStatus()
     
     objects.statusLabel:setText("STATUS = " .. status)
 
-    for i = logCount, #logs do
+    for i = logCount, #logs+3 do
         for level, LogString in pairs(logs[i]) do
             for _, chunk in ipairs(uteisModule.breakString(LogString, objects.size-2)) do
                 objects.logsFrame:addLabel():setPosition(2, logLine):setText(chunk):setForeground(MyColors[level])
