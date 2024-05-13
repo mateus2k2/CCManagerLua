@@ -33,8 +33,8 @@ function APIGUIModule.createFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
-    local debugTestInMain = require("/CC/Uteis/Debug")
-    debugFrame = debugTestInMain.debugFunc({})
+    -- local debugTestInMain = require("/CC/Uteis/Debug")
+    -- debugFrame = debugTestInMain.debugFunc({})
 
     logs = APIModule.getLogs(0)
     status = APIModule.getStatus()
