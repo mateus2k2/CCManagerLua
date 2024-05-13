@@ -22,4 +22,4 @@ function APIHelperModule.getLogs()
 end
 
 
-return APIGUIModule
+return APIHelperModule
