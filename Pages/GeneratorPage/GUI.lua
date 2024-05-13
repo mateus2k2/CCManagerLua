@@ -13,7 +13,7 @@ function handleGeneratorButton()
     end
 end
 
-function generatorGUIModule.createGeneratorFrame(main)
+function generatorGUIModule.createFrame(main)
     local w, h = main:getSize()
     local pageTitle = "Generator Manager"
     local pageTitleX = math.floor(w / 2 - #pageTitle / 2)
@@ -31,7 +31,7 @@ function generatorGUIModule.createGeneratorFrame(main)
         generatorButton = generatorButton
     }
 
-    return main, frame, objects
+    return main, frame, objects, pageTitle
 end
 
 function generatorGUIModule.updateFrame(objects)

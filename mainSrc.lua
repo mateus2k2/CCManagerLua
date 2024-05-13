@@ -1,5 +1,5 @@
 local APIModule = require("/CC/API")
-local mainGUIModule = require("/CC/GUI")
+local GUIModule = require("/CC/GUI")
 
 -- ----------------------------------------
 -- --API
@@ -34,9 +34,9 @@ GUIModules = {
 -- ----------------------------------------
 
 parallel.waitForAny(
-    function() mainGUIModule.startGUI(GUIModules) end,
+    function() GUIModule.startGUI(GUIModules) end,
     function() APIModule.startAPI(APIModules) end,
-    function() mainGUIModule.basalt.autoUpdate() end
+    function() GUIModule.basalt.autoUpdate() end
 )
 
 -- ----------------------------------------

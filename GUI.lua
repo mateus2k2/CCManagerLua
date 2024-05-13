@@ -30,17 +30,26 @@ local function createGUI()
         self:setPosition(w, 1)
     end)
 
-    main, frameGenerator, generatorObjects = GUIModules.generatorGUIModule.createGeneratorFrame(main)
-    main, frameResorces, resoursesObjects = GUIModules.resorcesManagerGUIModule.createResorcesManagerFrame(main)
-    main, frameAPI, APIObjects = GUIModules.APIGUIModule.createAPIFrame(main)
-    main, frameMain = GUIModules.mainPageModule.createMainFrame(main)
+    -- main, frameMain = GUIModules.mainPageModule.createMainFrame(main)
+    -- main, frameAPI, APIObjects = GUIModules.APIGUIModule.createAPIFrame(main)
+    -- main, frameGenerator, generatorObjects = GUIModules.generatorGUIModule.createGeneratorFrame(main)
+    -- main, frameResorces, resoursesObjects = GUIModules.resorcesManagerGUIModule.createResorcesManagerFrame(main)
 
-    sub = {
-        {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = GUIModules.mainPageModule.updateFrame},
-        {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = GUIModules.APIGUIModule.updateFrame},
-        {index = 3, frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = GUIModules.generatorGUIModule.updateFrame},
-        {index = 4, frame = frameResorces:hide(),  title = "Resorses",  objects = resoursesObjects, updateFunction = GUIModules.resorcesManagerGUIModule.updateFrame},
-    }
+    -- sub = {
+    --     {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = GUIModules.mainPageModule.updateFrame},
+    --     {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = GUIModules.APIGUIModule.updateFrame},
+    --     {index = 3, frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = GUIModules.generatorGUIModule.updateFrame},
+    --     {index = 4, frame = frameResorces:hide(),  title = "Resorses",  objects = resoursesObjects, updateFunction = GUIModules.resorcesManagerGUIModule.updateFrame},
+    -- }
+
+    sub = {}
+
+    for k,v in pairs(GUIModules) do
+        local main, frame, objects, title = v.createFrame(main)
+        local index = #sub + 1
+
+        table.insert(sub, {index = index, frame = frame, title = title, objects = objects, updateFunction = v.updateFunction})
+    end
 
 
     local y = 2

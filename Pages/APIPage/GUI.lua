@@ -7,7 +7,7 @@ local logLine = 2
 local logCount = 1
 MyColors = {SUCCESS = colors.green, ERROR = colors.red, INFO = colors.yellow}
 
-function APIGUIModule.createAPIFrame(main)
+function APIGUIModule.createFrame(main)
     local w, h = main:getSize()
     local pageTitle = "Logs API Page"
     local pageTitleLength = string.len(pageTitle)
@@ -27,7 +27,7 @@ function APIGUIModule.createAPIFrame(main)
         size = logsFrame:getSize()
     }
 
-    return main, frame, objects
+    return main, frame, objects, pageTitle
 end
 
 function APIGUIModule.updateFrame(objects)

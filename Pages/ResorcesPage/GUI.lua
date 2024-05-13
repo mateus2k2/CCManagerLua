@@ -6,7 +6,7 @@ local resorsesModuleMine = require("/CC/Pages/ResorcesPage/Resorces")
 local debugTestInMain = require("/CC/Uteis/Debug")
 debugFrame = debugTestInMain.debugFunc({first = false})
 
-function resorcesManagerGUIModule.createResorcesManagerFrame(main)
+function resorcesManagerGUIModule.createFrame(main)
     local w, h = main:getSize()
     local pageTitle = "Resorces Manager"
     local pageTitleLength = string.len(pageTitle)
@@ -35,7 +35,7 @@ function resorcesManagerGUIModule.createResorcesManagerFrame(main)
         title = titleLabel,
     }
 
-    return main, frame, objects
+    return main, frame, objects, pageTitle
 end
 
 function resorcesManagerGUIModule.updateFrame(objects)

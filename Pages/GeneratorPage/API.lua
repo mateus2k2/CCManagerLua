@@ -8,7 +8,7 @@ function gerenatorModuleAPI.handleRequest(request)
     if(request.action == nil) then result = {result = "ERROR", errorType = "Error in the gerenatorModuleAPI.handleRequest. Missing action"} end
 
     if(request.action == "getBatteryFillLevel") then
-        result = {result = generatorModule.getBatteryFillLevel()    }
+        result = {result = generatorModule.getBatteryFillLevel()}
     end
 
     if(request.action == "getBatteryMaxFillLevel") then

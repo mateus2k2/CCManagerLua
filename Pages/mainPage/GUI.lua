@@ -1,6 +1,6 @@
 local mainPageModule = {}
 
-function mainPageModule.createMainFrame(main)
+function mainPageModule.createFrame(main)
     local w, h = main:getSize()
     local pageTitle = "Main Page"
     local pageTitleLength = string.len(pageTitle)
@@ -10,7 +10,9 @@ function mainPageModule.createMainFrame(main)
 
     frame:addLabel():setText(pageTitle):setPosition(pageTitleX, 2)
 
-    return main, frame
+    objects = {}
+
+    return main, frame, objects, pageTitle
 end
 
 function mainPageModule.updateFrame()
