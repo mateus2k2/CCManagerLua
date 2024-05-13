@@ -43,7 +43,7 @@ end
 
 
 local function startAPI(APIModulesToLoad)
-    myModules = APIModulesToLoad
+    APIModules = APIModulesToLoad
 
     while true do
         request = http.get(serverURL .. "/getOldestRequest")
