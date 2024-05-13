@@ -4,13 +4,6 @@ indexOnTop = 1
 sub = nil
 GUIModules = nil
 
-local function startGUI(GUIModulesToLoad) 
-    GUIModules = APIModulesToLoad 
-    createGUI() 
-    updateFrame()
-
-end
-
 local function createGUI() 
 
     ----------------------------------------
@@ -68,8 +61,9 @@ local function createGUI()
         y = y + 4
     end
 end
+
 ----------------------------------------
---MAIN FRAME
+--UPDATE
 ----------------------------------------
 
 function updateFrame()
@@ -77,6 +71,17 @@ function updateFrame()
         sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
         os.sleep(1)
     end
+end
+
+----------------------------------------
+--START
+----------------------------------------
+
+local function startGUI(GUIModulesToLoad) 
+    GUIModules = APIModulesToLoad 
+    createGUI() 
+    updateFrame()
+
 end
 
 return {
