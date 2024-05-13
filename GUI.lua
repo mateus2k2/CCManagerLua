@@ -17,6 +17,7 @@ local function createGUI()
 
     local debugTestInMain = require("/CC/Uteis/Debug")
     debugFrame = debugTestInMain.debugFunc({basalt = basalt, main = main, first = true})
+    debugFrame.debug("123")
 
     ----------------------------------------
     --SIDE BAR

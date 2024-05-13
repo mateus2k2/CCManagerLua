@@ -7,8 +7,8 @@ local logLine = 2
 local logCount = 1
 MyColors = {SUCCESS = colors.green, ERROR = colors.red, INFO = colors.yellow}
 
-local debugTestInMain = require("/CC/Uteis/Debug")
-debugFrame = debugTestInMain.debugFunc()
+-- local debugTestInMain = require("/CC/Uteis/Debug")
+-- debugFrame = debugTestInMain.debugFunc()
 
 function APIGUIModule.createFrame(main)
     local w, h = main:getSize()
