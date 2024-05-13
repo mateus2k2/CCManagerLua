@@ -3,7 +3,7 @@ local generatorModuleAPI = require("/CC/GeneratorManager/API")
 
 local uteisModule = require("/CC/Uteis/Uteis")
 
-local serverURL = "http://localhost:5000"
+local serverURL = "http://localhost:5015"
 
 local logs = {}
 
