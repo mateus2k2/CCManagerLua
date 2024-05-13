@@ -12,7 +12,7 @@ function mainPageModule.createFrame(main)
 
     objects = {}
 
-    return main, frame, objects, pageTitle
+    return main, frame, objects, "Main"
 end
 
 function mainPageModule.updateFrame()

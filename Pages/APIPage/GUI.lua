@@ -27,7 +27,7 @@ function APIGUIModule.createFrame(main)
         size = logsFrame:getSize()
     }
 
-    return main, frame, objects, pageTitle
+    return main, frame, objects, "API"
 end
 
 function APIGUIModule.updateFrame(objects)

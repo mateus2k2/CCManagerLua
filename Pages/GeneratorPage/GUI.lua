@@ -31,7 +31,7 @@ function generatorGUIModule.createFrame(main)
         generatorButton = generatorButton
     }
 
-    return main, frame, objects, pageTitle
+    return main, frame, objects, "Generator"
 end
 
 function generatorGUIModule.updateFrame(objects)

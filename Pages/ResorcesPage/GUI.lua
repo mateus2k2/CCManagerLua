@@ -35,7 +35,7 @@ function resorcesManagerGUIModule.createFrame(main)
         title = titleLabel,
     }
 
-    return main, frame, objects, pageTitle
+    return main, frame, objects, "Resorses"
 end
 
 function resorcesManagerGUIModule.updateFrame(objects)

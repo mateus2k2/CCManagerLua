@@ -23,10 +23,10 @@ local APIGUIModule = require("/CC/Pages/APIPage/GUI")
 local mainPageModule = require("/CC/Pages/mainPage/GUI")
 
 GUIModules = {
+    mainPageModule = mainPageModule    
+    APIGUIModule = APIGUIModule,
     generatorGUIModule = generatorGUIModule,
     resorcesManagerGUIModule = resorcesManagerGUIModule, 
-    APIGUIModule = APIGUIModule,
-    mainPageModule = mainPageModule    
 }
 
 -- ----------------------------------------
