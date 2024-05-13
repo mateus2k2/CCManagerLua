@@ -6,8 +6,8 @@ local GUIModule = require("/CC/GUI")
 -- ----------------------------------------
 
 APIModules = {
-    resource = require("/CC/Pages/ResorcesPage/API"),
-    generator = require("/CC/Pages/GeneratorPage/API")
+    resource    = require("/CC/Pages/ResorcesPage/API"),
+    generator   = require("/CC/Pages/GeneratorPage/API")
 }
 
 -- ----------------------------------------
@@ -15,10 +15,10 @@ APIModules = {
 -- ----------------------------------------
 
 GUIModules = {
-    mainPageModule = require("/CC/Pages/mainPage/GUI"),    
-    APIGUIModule = require("/CC/Pages/APIPage/GUI"),
-    generatorGUIModule = require("/CC/Pages/GeneratorPage/GUI"),
-    resorcesManagerGUIModule = require("/CC/Pages/ResorcesPage/GUI")
+    mainPageModule              = require("/CC/Pages/mainPage/GUI"),    
+    APIGUIModule                = require("/CC/Pages/APIPage/GUI"),
+    generatorGUIModule          = require("/CC/Pages/GeneratorPage/GUI"),
+    resorcesManagerGUIModule    = require("/CC/Pages/ResorcesPage/GUI")
 }
 
 -- ----------------------------------------
