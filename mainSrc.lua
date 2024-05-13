@@ -79,6 +79,14 @@ function updateFrame()
     end
 end
 
+local resorsesModuleAPI  = require("/CC/ResorcesManager/API")
+local generatorModuleAPI = require("/CC/GeneratorManager/API")
+modules = {
+    resource = resorsesModuleAPI,
+    generator = generatorModuleAPI
+}
+API.initAPI(modules)
+
 parallel.waitForAny(updateFrame, API.startAPI, basalt.autoUpdate)
 
 -- ----------------------------------------

@@ -1,11 +1,14 @@
-local resorsesModuleAPI  = require("/CC/ResorcesManager/API")
-local generatorModuleAPI = require("/CC/GeneratorManager/API")
-
 local uteisModule = require("/CC/Uteis/Uteis")
 
 local serverURL = "http://localhost:5015"
 
 local logs = {}
+local modules = {}
+
+local function initAPI(toLoad)
+    modules = toLoad
+end
+
 
 local function handleRequest(request)
     local responseObj = nil
@@ -13,14 +16,11 @@ local function handleRequest(request)
     local id = request.id
 
     if id and body and body.type then 
-        if body.type == "resource" then
-            responseObj = resorsesModuleAPI.handleRequest(body)
-        elseif body.type == "generator" then
-            responseObj = generatorModuleAPI.handleRequest(body)
+        if modules[type] then
+            responseObj = modules[type].handleRequest(body) 
         else
             responseObj = {result = "ERROR", errorType = "type not found"}
         end
-
 
         if responseObj.result == "ERROR" then 
             logs[#logs + 1] = {ERROR = "Error processing request = " .. textutils.serialiseJSON(responseObj.errorType)}
@@ -79,5 +79,6 @@ end
 return {
     startAPI = startAPI,
     logs = logs,
-    status = status
+    status = status,
+    initAPI = initAPI
 }
