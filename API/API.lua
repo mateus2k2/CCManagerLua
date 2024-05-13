@@ -20,7 +20,7 @@ local function handleRequest(request)
         if responseObj.result == "ERROR" then 
             logs[#logs + 1] = {ERROR = "Error processing request = " .. textutils.serialiseJSON(responseObj.errorType)}
         else
-            logs[#logs + 1] = {SUCCESS = "Got valid result processing request."}
+            logs[#logs + 1] = {SUCCESS = "Got valid result processing request = " .. textutils.serialiseJSON(responseObj)}
         end
 
     else
