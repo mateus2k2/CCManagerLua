@@ -1,6 +1,6 @@
 local resorsesModuleMine = {}
 
-local rfSystem = peripheral.find("rsBridge")
+local rfSystem = peripheral.wrap("rsBridge_0")
 if rfSystem == nil then error("RF System not found") end
 
 function resorsesModuleMine.getItem(itemFilter)
