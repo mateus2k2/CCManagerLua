@@ -81,7 +81,7 @@ local function startAPI(APIModulesToLoad)
             writeLog({INFO = "Request Made: " .. uteisModule.tableToString(obj)})
             handleRequest(obj)
         end
-        os.sleep(0.5)
+        -- os.sleep(0.5)
     end
 end 
 
