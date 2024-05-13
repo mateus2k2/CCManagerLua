@@ -77,7 +77,7 @@ end
 --START
 ----------------------------------------
 
-local function startGUI(GUIModulesToLoad) 
+function startGUI(GUIModulesToLoad) 
     GUIModules = APIModulesToLoad 
     createGUI() 
     updateFrame()
