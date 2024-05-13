@@ -14,6 +14,12 @@ local function writeLog(log)
     file.close()
 end
 
+local function writeStatus(status)
+    local file = fs.open(statusFilePath, "w")
+    file.writeLine(status)
+    file.close()
+end
+
 local function handleRequest(request)
     local responseObj = nil
     local body = request.body
@@ -65,10 +71,7 @@ local function startAPI(APIModulesToLoad)
     APIModules = APIModulesToLoad
 
     while true do
-        local statusResult = status()
-        local statusFile = fs.open(statusFilePath, "w")
-        statusFile.write(statusResult)
-        statusFile.close()
+        writeStatus(status())
 
         local headers = { ["Authorization"] = apiToken}
         request = http.get(serverURL .. "/getOldestRequest", headers)
