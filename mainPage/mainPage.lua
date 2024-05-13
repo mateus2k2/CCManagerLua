@@ -1,6 +1,6 @@
-local mainGUIModule = {}
+local mainPageModule = {}
 
-function mainGUIModule.createMainFrame(main)
+function mainPageModule.createMainFrame(main)
     local w, h = main:getSize()
     local pageTitle = "Main Page"
     local pageTitleLength = string.len(pageTitle)
@@ -13,7 +13,7 @@ function mainGUIModule.createMainFrame(main)
     return main, frame
 end
 
-function mainGUIModule.updateFrame()
+function mainPageModule.updateFrame()
 end
 
-return mainGUIModule
+return mainPageModule
