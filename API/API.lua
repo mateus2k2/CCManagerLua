@@ -5,11 +5,6 @@ local serverURL = "http://localhost:5015"
 local logs = {}
 local modules = {}
 
-local function initAPI(toLoad)
-    modules = toLoad
-end
-
-
 local function handleRequest(request)
     local responseObj = nil
     local body = request.body
@@ -47,7 +42,9 @@ local function handleRequest(request)
 end
 
 
-local function startAPI()
+local function startAPI(toLoad)
+    modules = toLoad
+
     while true do
         request = http.get(serverURL .. "/getOldestRequest")
         if request then 
