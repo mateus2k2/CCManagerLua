@@ -45,8 +45,8 @@ local function createGUI()
     sub = {}
 
     for k,v in pairs(GUIModules) do
-        local main, frame, objects, title = v.createFrame(main)
-        local index = #sub + 1
+        main, frame, objects, title = v.createFrame(main)
+        index = #sub + 1
 
         table.insert(sub, {index = index, frame = frame, title = title, objects = objects, updateFunction = v.updateFunction})
     end
