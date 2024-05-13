@@ -10,7 +10,7 @@ function APIHelperModule.getLogs(startingLine)
         return logData
     end
 
-    for _ = 1, startingLine - 1 do
+    for _ = 1, startingLine do
         if not file.readLine() then
             file.close()
             return logData
