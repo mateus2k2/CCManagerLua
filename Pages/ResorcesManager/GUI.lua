@@ -1,7 +1,7 @@
 local uteis = require("/CC/Uteis/Uteis")
 
 local resorcesManagerGUIModule = {}
-local resorsesModuleMine = require("/CC/ResorcesManager/Resorces")
+local resorsesModuleMine = require("/CC/Pages/ResorcesManager/Resorces")
 
 local debugTestInMain = require("/CC/Uteis/Debug")
 debugFrame = debugTestInMain.debugFunc({first = false})

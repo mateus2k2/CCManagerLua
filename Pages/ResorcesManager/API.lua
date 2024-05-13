@@ -1,6 +1,6 @@
 local resorsesModuleAPI = {}
 
-local resorsesModuleMine = require("/CC/ResorcesManager/Resorces")
+local resorsesModuleMine = require("/CC/Pages/ResorcesManager/Resorces")
 
 function resorsesModuleAPI.handleRequest(request)
     result = nil

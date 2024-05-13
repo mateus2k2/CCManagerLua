@@ -4,11 +4,10 @@ indexOnTop = 1
 sub = nil
 GUIModules = nil
 
+----------------------------------------
+--MAIN FRAME
+----------------------------------------
 local function createGUI() 
-
-    ----------------------------------------
-    --MAIN FRAME
-    ----------------------------------------
 
     -- local monitors = peripheral.wrap("monitor_10") 
     -- local main = basalt.addMonitor():setMonitor(monitors):setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
