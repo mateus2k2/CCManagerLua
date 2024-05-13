@@ -11,14 +11,12 @@ function APIHelperModule.getLogs(startingLine)
     end
 
     for _ = 1, startingLine - 1 do
-        -- if not file.readLine() then
-        --     file.close()
-        --     return logData
-        -- end
-        file.readLine()
+        if not file.readLine() then
+            file.close()
+            return logData
+        end
     end
 
-    -- Read lines starting from the desired line
     local line = file.readLine()
     while line do
         local success, logEntry = pcall(textutils.unserialiseJSON, line)
