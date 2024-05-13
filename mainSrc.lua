@@ -86,7 +86,6 @@ modules = {
     generator = generatorModuleAPI
 }
 
-parallel.waitForAny(updateFrame, API.startAPI, basalt.autoUpdate)
 parallel.waitForAny(
     function() updateFrame() end,
     function() API.startAPI(modules) end,
