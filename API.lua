@@ -2,7 +2,7 @@ local uteisModule = require("/CC/Uteis/Uteis")
 
 local serverURL = "http://localhost:5015"
 local logFilePath = "/CC/Logs/logs.txt"
-local statusFilePath = "/CC/Logs/logs.txt"
+local statusFilePath = "/CC/Logs/APIStatus.txt"
 
 local APIModules = {}
 
