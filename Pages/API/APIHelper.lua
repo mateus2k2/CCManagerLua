@@ -1,6 +1,7 @@
 local APIHelperModule = {}
 
 local logFilePath = "/CC/Logs/logs.txt"
+local statusFilePath = "/CC/Logs/APIStatus.txt"
 
 function APIHelperModule.getLogs()
     local logData = {}
@@ -18,6 +19,17 @@ function APIHelperModule.getLogs()
 
     file.close()
     return logData
+end
+
+local function readFile()
+    local file = fs.open(statusFilePath, "r")
+    if not file then
+        return nil
+    end
+
+    local content = file.readAll()
+    file.close()
+    return content
 end
 
 
