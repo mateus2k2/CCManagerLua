@@ -9,12 +9,14 @@ local logs = {}
 
 local function handleRequest(request)
     local responseObj = nil
+    local body = request.body
+    local id = request.id
 
-    if request.id and request.body.type and request.body then 
-        if request.body.type == "resource" then
-            responseObj = resorsesModuleAPI.handleRequest(request.body)
-        elseif request.body.type == "generator" then
-            responseObj = generatorModuleAPI.handleRequest(request.body)
+    if id and body.type and body then 
+        if body.type == "resource" then
+            responseObj = resorsesModuleAPI.handleRequest(body)
+        elseif body.type == "generator" then
+            responseObj = generatorModuleAPI.handleRequest(body)
         end
 
         if responseObj.result == "ERROR" then 
@@ -29,12 +31,12 @@ local function handleRequest(request)
     end
 
     local responseStr = textutils.serialiseJSON(responseObj)
-    local url = serverURL .. "/makeResponse/" .. request.id
+    local url = serverURL .. "/makeResponse/" .. id
     local headers = { ["Content-Type"] = "application/json" }
     local response = http.post(url, responseStr, headers)
 
     if response then
-        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(request.id) .. " Got: " .. (response.readAll())}
+        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(id) .. " Got: " .. (response.readAll())}
         response.close()
     else
         logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id)}
