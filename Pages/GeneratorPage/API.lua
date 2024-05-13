@@ -1,6 +1,6 @@
 local gerenatorModuleAPI = {}
 
-local generatorModule = require("/CC/Pages/GeneratorManager/Generator")
+local generatorModule = require("/CC/Pages/GeneratorPage/Generator")
 
 function gerenatorModuleAPI.handleRequest(request)
     local result = nil
