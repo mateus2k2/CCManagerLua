@@ -4,7 +4,7 @@ local APIModule = require("/CC/Pages/APIPage/API")
 local uteisModule = require("/CC/Uteis/Uteis")
 
 local logLine = 2
-local logCount = 1
+local logCount = 0
 MyColors = {SUCCESS = colors.green, ERROR = colors.red, INFO = colors.yellow}
 
 
