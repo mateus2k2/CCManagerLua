@@ -6,6 +6,7 @@ local APIGUIModule = require("/CC/API/GUI")
 local mainPageModule = require("/CC/mainPage/GUI")
 
 indexOnTop = 1
+sub = nil
 
 local function mainGUI() 
     ----------------------------------------
@@ -43,7 +44,7 @@ local function mainGUI()
     main, frameAPI, APIObjects = APIGUIModule.createAPIFrame(main)
     main, frameMain = mainPageModule.createMainFrame(main)
 
-    local sub = {
+    sub = {
         {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = mainPageModule.updateFrame},
         {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = APIGUIModule.updateFrame},
         {index = 3, frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = generatorGUIModule.updateFrame},
