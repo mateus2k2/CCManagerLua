@@ -1,18 +1,11 @@
 local basalt = require("/Modules/basalt")
 
-local generatorGUIModule = require("/CC/GeneratorManager/GUI")
-local resorcesManagerGUIModule = require("/CC/ResorcesManager/GUI")
-local APIGUIModule = require("/CC/API/GUI")
-local mainPageModule = require("/CC/mainPage/GUI")
-
 indexOnTop = 1
 sub = nil
+GUIModules = nil
 
-local function mainGUI() 
-    ----------------------------------------
-    --MODULES
-    ----------------------------------------
-
+local function mainGUI(GUIModulesToLoad) 
+    GUIModules = APIModulesToLoad 
 
     ----------------------------------------
     --MAIN FRAME
@@ -39,16 +32,16 @@ local function mainGUI()
         self:setPosition(w, 1)
     end)
 
-    main, frameGenerator, generatorObjects = generatorGUIModule.createGeneratorFrame(main)
-    main, frameResorces, resoursesObjects = resorcesManagerGUIModule.createResorcesManagerFrame(main)
-    main, frameAPI, APIObjects = APIGUIModule.createAPIFrame(main)
-    main, frameMain = mainPageModule.createMainFrame(main)
+    main, frameGenerator, generatorObjects = GUIModules.generatorGUIModule.createGeneratorFrame(main)
+    main, frameResorces, resoursesObjects = GUIModules.resorcesManagerGUIModule.createResorcesManagerFrame(main)
+    main, frameAPI, APIObjects = GUIModules.APIGUIModule.createAPIFrame(main)
+    main, frameMain = GUIModules.mainPageModule.createMainFrame(main)
 
     sub = {
-        {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = mainPageModule.updateFrame},
-        {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = APIGUIModule.updateFrame},
-        {index = 3, frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = generatorGUIModule.updateFrame},
-        {index = 4, frame = frameResorces:hide(),  title = "Resorses",  objects = resoursesObjects, updateFunction = resorcesManagerGUIModule.updateFrame},
+        {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = GUIModules.mainPageModule.updateFrame},
+        {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = GUIModules.APIGUIModule.updateFrame},
+        {index = 3, frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = GUIModules.generatorGUIModule.updateFrame},
+        {index = 4, frame = frameResorces:hide(),  title = "Resorses",  objects = resoursesObjects, updateFunction = GUIModules.resorcesManagerGUIModule.updateFrame},
     }
 
 

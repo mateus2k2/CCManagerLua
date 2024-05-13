@@ -1,19 +1,44 @@
 local APIModule = require("/CC/API/API")
 local mainGUIModule = require("/CC/mainGUI")
 
+-- ----------------------------------------
+-- --API
+-- ----------------------------------------
+
 local resorsesModuleAPI  = require("/CC/ResorcesManager/API")
 local generatorModuleAPI = require("/CC/GeneratorManager/API")
-modulesAPI = {
+
+APIModules = {
     resource = resorsesModuleAPI,
     generator = generatorModuleAPI
 }
 
-mainGUIModule.mainGUI()
+-- ----------------------------------------
+-- --GUI
+-- ----------------------------------------
+
+local generatorGUIModule = require("/CC/GeneratorManager/GUI")
+local resorcesManagerGUIModule = require("/CC/ResorcesManager/GUI")
+local APIGUIModule = require("/CC/API/GUI")
+local mainPageModule = require("/CC/mainPage/GUI")
+
+GUIModules = {
+    generatorGUIModule = generatorGUIModule
+    resorcesManagerGUIModule = resorcesManagerGUIModule    
+    APIGUIModule = APIGUIModule
+    mainPageModule = mainPageModule    
+}
+
+mainGUIModule.mainGUI(GUIModules)
+
+-- ----------------------------------------
+-- --ENTRRYPOINT
+-- ----------------------------------------
 
 parallel.waitForAny(
     function() mainGUIModule.updateFrame() end,
     function() mainGUIModule.basalt.autoUpdate() end,
-    function() APIModule.startAPI(modulesAPI) end
+    function() APIModule.startAPI(APIModules) end
 )
 
 -- ----------------------------------------

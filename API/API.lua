@@ -3,7 +3,7 @@ local uteisModule = require("/CC/Uteis/Uteis")
 local serverURL = "http://localhost:5015"
 
 local logs = {}
-local myModules = {}
+local APIModules = {}
 
 local function handleRequest(request)
     local responseObj = nil
@@ -11,8 +11,8 @@ local function handleRequest(request)
     local id = request.id
 
     if id and body and body.type then 
-        if myModules[body.type] then
-            responseObj = myModules[body.type].handleRequest(body) 
+        if APIModules[body.type] then
+            responseObj = APIModules[body.type].handleRequest(body) 
         else
             responseObj = {result = "ERROR", errorType = "type not found"}
         end
@@ -42,7 +42,7 @@ local function handleRequest(request)
 end
 
 
-local function startAPI(toLoad)
+local function startAPI(APIModulesToLoad)
     myModules = toLoad
 
     while true do
