@@ -2,7 +2,7 @@ local APIHelperModule = {}
 
 local logFilePath = "/CC/Logs/logs.txt"
 
-function APIHelperModule.getLogs(main)
+function APIHelperModule.getLogs()
     local logData = {}
     local file = fs.open(logFilePath, "r")
     if not file then
