@@ -48,7 +48,7 @@ local function createGUI()
         main, frame, objects, title = v.createFrame(main)
         index = #sub + 1
 
-        table.insert(sub, {index = index, frame = frame, title = title, objects = objects, updateFunction = v.updateFunction})
+        table.insert(sub, {index = index, frame = frame, title = title, objects = objects, updateFrame = v.updateFrame})
     end
 
 
@@ -76,7 +76,7 @@ end
 
 function updateFrame()
     while true do
-        sub[indexOnTop].updateFunction(sub[indexOnTop].objects)
+        sub[indexOnTop].updateFrame(sub[indexOnTop].objects)
         os.sleep(1)
     end
 end
