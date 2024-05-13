@@ -48,11 +48,7 @@ local function createGUI()
         main, frame, objects, title = v.createFrame(main)
         index = #sub + 1
 
-        if index == 1 then
-            frame:show()
-        else
-            frame:hide()
-        end
+        if index > 1 then frame:hide() end
         table.insert(sub, {index = index, frame = frame, title = title, objects = objects, updateFrame = v.updateFrame})
     end
 
