@@ -1,9 +1,15 @@
 local uteisModule = require("/CC/Uteis/Uteis")
 
 local serverURL = "http://localhost:5015"
+local logFilePath = "/CC/Logs/logs.txt"
 
-local logs = {}
 local APIModules = {}
+
+local function writeLog(log)
+    local file = fs.open(logFilePath, "a")
+    file.writeLine(textutils.serialiseJSON(log))
+    file.close()
+end
 
 local function handleRequest(request)
     local responseObj = nil
@@ -18,13 +24,13 @@ local function handleRequest(request)
         end
 
         if responseObj.result == "ERROR" then 
-            logs[#logs + 1] = {ERROR = "Error processing request = " .. textutils.serialiseJSON(responseObj.errorType)}
+            writeLog({ERROR = "Error processing request = " .. textutils.serialiseJSON(responseObj.errorType)})
         else
-            logs[#logs + 1] = {SUCCESS = "Got valid result processing request = " .. textutils.serialiseJSON(responseObj)}
+            writeLog({SUCCESS = "Got valid result processing request = " .. textutils.serialiseJSON(responseObj)})
         end
 
     else
-        logs[#logs + 1] = {ERROR = "Error in the main handleRequest. Missing request.id or request.body.type or request.body"}
+        writeLog({ERROR = "Error in the main handleRequest. Missing request.id or request.body.type or request.body"})
         responseObj = {result = "ERROR", errorType="Error in the main handleRequest. Missing request.id or request.body.type or request.body"}
     end
 
@@ -34,10 +40,10 @@ local function handleRequest(request)
     local response = http.post(url, responseStr, headers)
 
     if response then
-        logs[#logs + 1] = {SUCCESS = "Responded to: " .. tostring(id) .. " Got: " .. (response.readAll())}
+        writeLog({SUCCESS = "Responded to: " .. tostring(id) .. " Got: " .. (response.readAll())})
         response.close()
     else
-        logs[#logs + 1] = {ERROR = "Error in response: " .. tostring(id)}
+        writeLog({ERROR = "Error in response: " .. tostring(id)})
     end
 end
 
@@ -46,18 +52,18 @@ local function startAPI(APIModulesToLoad)
     APIModules = APIModulesToLoad
 
     while true do
+        
         request = http.get(serverURL .. "/getOldestRequest")
         if request then 
             obj = textutils.unserialiseJSON(request.readAll())
             request.close()
         end
         if obj then
-            logs[#logs + 1] = {INFO = "Request Made: " .. uteisModule.tableToString(obj)}
+            writeLog({INFO = "Request Made: " .. uteisModule.tableToString(obj)})
             handleRequest(obj)
         end
         os.sleep(0.5)
     end
-    
 end 
 
 local function status()
@@ -68,14 +74,9 @@ local function status()
     else
         return "DOWN"
     end
-
 end
-
--- startAPI()
 
 return {
     startAPI = startAPI,
-    logs = logs,
     status = status,
-    initAPI = initAPI
 }

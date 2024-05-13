@@ -1,6 +1,6 @@
 local APIGUIModule = {}
 
-local APIModule = require("/CC/API")
+local APIModule = require("/CC/Pages/APIHelper")
 local uteisModule = require("/CC/Uteis/Uteis")
 
 local logLine = 2
@@ -31,10 +31,11 @@ function APIGUIModule.createAPIFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
-    objects.statusLabel:setText("STATUS = " .. APIModule.status())
+    -- objects.statusLabel:setText("STATUS = " .. APIModule.status())
+    logs = APIModule.getLogs()
 
-    for i = logCount, #APIModule.logs do
-        for level, LogString in pairs(APIModule.logs[i]) do
+    for i = logCount, #logs do
+        for level, LogString in pairs(logs[i]) do
             for _, chunk in ipairs(uteisModule.breakString(LogString, objects.size-2)) do
                 objects.logsFrame:addLabel():setPosition(2, logLine):setText(chunk):setForeground(MyColors[level])
                 logLine = logLine + 1
