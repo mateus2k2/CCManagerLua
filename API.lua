@@ -2,6 +2,7 @@ local uteisModule = require("/CC/Uteis/Uteis")
 
 local serverURL = "http://localhost:5015"
 local logFilePath = "/CC/Logs/logs.txt"
+local statusFilePath = "/CC/Logs/logs.txt"
 
 local APIModules = {}
 
@@ -50,8 +51,13 @@ end
 
 local function startAPI(APIModulesToLoad)
     APIModules = APIModulesToLoad
+    local statusFilePath = "/path/to/statusfile.txt" 
 
     while true do
+        local statusResult = status()
+        local statusFile = fs.open(statusFilePath, "w")
+        statusFile.write(statusResult)
+        statusFile.close()
         
         request = http.get(serverURL .. "/getOldestRequest")
         if request then 
