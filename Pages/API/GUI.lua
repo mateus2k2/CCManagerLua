@@ -31,8 +31,10 @@ function APIGUIModule.createAPIFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
-    -- objects.statusLabel:setText("STATUS = " .. APIModule.status())
     logs = APIModule.getLogs()
+    status = APIModule.getStatus()
+    
+    objects.statusLabel:setText("STATUS = " .. status)
 
     for i = logCount, #logs do
         for level, LogString in pairs(logs[i]) do

@@ -21,7 +21,7 @@ function APIHelperModule.getLogs()
     return logData
 end
 
-local function readFile()
+function APIHelperModule.getStatus()
     local file = fs.open(statusFilePath, "r")
     if not file then
         return nil
