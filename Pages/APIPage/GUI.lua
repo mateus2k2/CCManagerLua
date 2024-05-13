@@ -33,15 +33,17 @@ function APIGUIModule.createFrame(main)
 end
 
 function APIGUIModule.updateFrame(objects)
-    -- local debugTestInMain = require("/CC/Uteis/Debug")
-    -- debugFrame = debugTestInMain.debugFunc({})
-
+    
     logs = APIModule.getLogs(0)
     status = APIModule.getStatus()
     
     objects.statusLabel:setText("STATUS = " .. status)
+    
+    local debugTestInMain = require("/CC/Uteis/Debug")
+    debugFrame = debugTestInMain.debugFunc({})
+    debugFrame.debug("logCount = " .. logCount .. " #logs = " .. #logs)
 
-    for i = logCount, #logs+3 do
+    for i = logCount, #logs do
         for level, LogString in pairs(logs[i]) do
             for _, chunk in ipairs(uteisModule.breakString(LogString, objects.size-2)) do
                 objects.logsFrame:addLabel():setPosition(2, logLine):setText(chunk):setForeground(MyColors[level])

@@ -15,9 +15,8 @@ local function createGUI()
     local main = basalt.createFrame():setTheme({FrameBG = colors.lightGray, FrameFG = colors.black})
     local w, h = main:getSize()
 
-    local debugTestInMain = require("/CC/Uteis/Debug")
-    debugFrame = debugTestInMain.debugFunc({basalt = basalt, main = main, first = true})
-    debugFrame.debug("123")
+    local debugModuleInit = require("/CC/Uteis/Debug")
+    debugFrame = debugModuleInit.debugFunc({basalt = basalt, main = main, first = true})
 
     ----------------------------------------
     --SIDE BAR
