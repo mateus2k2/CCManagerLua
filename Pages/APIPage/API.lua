@@ -10,11 +10,12 @@ function APIHelperModule.getLogs(startingLine)
         return logData
     end
 
-    for _ = 1, startingLine do
-        if not file.readLine() then
-            file.close()
-            return logData
-        end
+    for _ = 1, startingLine - 1 do
+        -- if not file.readLine() then
+        --     file.close()
+        --     return logData
+        -- end
+        file.readLine()
     end
 
     -- Read lines starting from the desired line
