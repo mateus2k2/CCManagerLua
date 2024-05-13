@@ -32,16 +32,16 @@ local function mainGUI(GUIModulesToLoad)
         self:setPosition(w, 1)
     end)
 
-    main, frameGenerator, generatorObjects = GUIModules.generatorGUIModule.createGeneratorFrame(main)
-    main, frameResorces, resoursesObjects = GUIModules.resorcesManagerGUIModule.createResorcesManagerFrame(main)
-    main, frameAPI, APIObjects = GUIModules.APIGUIModule.createAPIFrame(main)
-    main, frameMain = GUIModules.mainPageModule.createMainFrame(main)
+    main, frameGenerator, generatorObjects = GUIModules.generatorGUIModuleKey.createGeneratorFrame(main)
+    main, frameResorces, resoursesObjects = GUIModules.resorcesManagerGUIModuleKey.createResorcesManagerFrame(main)
+    main, frameAPI, APIObjects = GUIModules.APIGUIModuleKey.createAPIFrame(main)
+    main, frameMain = GUIModules.mainPageModuleKey.createMainFrame(main)
 
     sub = {
-        {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = GUIModules.mainPageModule.updateFrame},
-        {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = GUIModules.APIGUIModule.updateFrame},
-        {index = 3, frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = GUIModules.generatorGUIModule.updateFrame},
-        {index = 4, frame = frameResorces:hide(),  title = "Resorses",  objects = resoursesObjects, updateFunction = GUIModules.resorcesManagerGUIModule.updateFrame},
+        {index = 1, frame = frameMain,             title = "Main",      objects = nil,              updateFunction = GUIModules.mainPageModuleKey.updateFrame},
+        {index = 2, frame = frameAPI:hide(),       title = "API",       objects = APIObjects,       updateFunction = GUIModules.APIGUIModuleKey.updateFrame},
+        {index = 3, frame = frameGenerator:hide(), title = "Generator", objects = generatorObjects, updateFunction = GUIModules.generatorGUIModuleKey.updateFrame},
+        {index = 4, frame = frameResorces:hide(),  title = "Resorses",  objects = resoursesObjects, updateFunction = GUIModules.resorcesManagerGUIModuleKey.updateFrame},
     }
 
 
