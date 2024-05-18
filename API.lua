@@ -40,7 +40,7 @@ local function handleRequest(request)
 
     else
         writeLog({ERROR = "Error in the main handleRequest. Missing request.id or request.body.type or request.body"})
-        responseObj = {result = "ERROR", errorType="Error in the main handleRequest. Missing request.id or request.body.type or request.body"}
+        responseObj = {result = "ERROR", errorType="Error in the main handleRequest. Missing request.id or request.body.type or request.body" .. " " .. tostring(id) .. " " .. tostring(body)}
     end
 
     local responseStr = textutils.serialiseJSON(responseObj)
