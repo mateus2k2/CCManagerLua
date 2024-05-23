@@ -47,4 +47,8 @@ function generatorGUIModule.updateFrame(objects)
     end
 end
 
+function generatorGUIModule.updateInterfaces()
+end
+
+
 return generatorGUIModule

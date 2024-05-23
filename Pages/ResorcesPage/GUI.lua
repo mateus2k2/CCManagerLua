@@ -41,6 +41,9 @@ end
 function resorcesManagerGUIModule.updateFrame(objects)
 end
 
+function generatorGUIModule.updateInterfaces()
+end
+
 return resorcesManagerGUIModule
 
 -- minecraft:iron_ingot

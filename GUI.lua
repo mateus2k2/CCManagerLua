@@ -37,7 +37,7 @@ local function createGUI()
         index = #sub + 1
 
         if index > 1 then frame:hide() end
-        table.insert(sub, {index = index, frame = frame, title = title, objects = objects, updateFrame = v.updateFrame})
+        table.insert(sub, {index = index, frame = frame, title = title, objects = objects, updateFrame = v.updateFrame, updateInterfaces = v.updateInterfaces})
     end
 
 
@@ -63,9 +63,18 @@ end
 --UPDATE
 ----------------------------------------
 
+-- update interfaces 
+function updateInterfaces()
+    for k,v in pairs(sub) do
+        v.updateInterfaces()
+    end
+    os.sleep(1)
+end
+
 function updateFrame()
     while true do
         sub[indexOnTop].updateFrame(sub[indexOnTop].objects)
+        updateInterfaces()
         os.sleep(1)
     end
 end
