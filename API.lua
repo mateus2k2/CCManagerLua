@@ -8,52 +8,8 @@ local statusFilePath = "/CC/Logs/APIStatus.txt"
 
 local APIModules = {}
 
-local function writeLog(log)
-    local file = fs.open(logFilePath, "a")
-    file.writeLine(textutils.serialiseJSON(log))
-    file.close()
-end
-
-local function writeStatus(status)
-    local file = fs.open(statusFilePath, "w")
-    file.writeLine(status)
-    file.close()
-end
-
-local function handleRequest(request)
-    local responseObj = nil
-    local body = request.body
-    local id = request.id
-
-    if id and body and body.type then 
-        if APIModules[body.type] then
-            responseObj = APIModules[body.type].handleRequest(body) 
-        else
-            responseObj = {result = "ERROR", errorType = "type not found"}
-        end
-
-        if responseObj.result == "ERROR" then 
-            writeLog({ERROR = "Error processing request = " .. textutils.serialiseJSON(responseObj.errorType)})
-        else
-            writeLog({SUCCESS = "Got valid result processing request = " .. textutils.serialiseJSON(responseObj)})
-        end
-
-    else
-        writeLog({ERROR = "Error in the main handleRequest. Missing request.id or request.body.type or request.body"})
-        responseObj = {result = "ERROR", errorType="Error in the main handleRequest. Missing request.id or request.body.type or request.body" .. " " .. tostring(id) .. " " .. tostring(body) .. tostring(body.type)}
-    end
-
-    local responseStr = textutils.serialiseJSON(responseObj)
-    local url = serverURL .. "/makeResponse/" .. id
-    local headers = { ["Content-Type"] = "application/json", ["Authorization"] = apiToken}
-    local response = http.post(url, responseStr, headers)
-
-    if response then
-        writeLog({SUCCESS = "Responded to: " .. tostring(id) .. " Got: " .. (response.readAll())})
-        response.close()
-    else
-        writeLog({ERROR = "Error in response: " .. tostring(id)})
-    end
+local function handleRequest()
+    return "OK"
 end
 
 local function status()
@@ -71,20 +27,10 @@ local function startAPI(APIModulesToLoad)
     APIModules = APIModulesToLoad
 
     while true do
-        writeStatus(status())
+        -- espera mesagem pelo ws
+        -- responde a mensagem
 
-        local headers = { ["Authorization"] = apiToken}
-        request = http.get(serverURL .. "/getOldestRequest", headers)
-
-        if request then 
-            obj = textutils.unserialiseJSON(request.readAll())
-            request.close()
-        end
-        if obj then
-            writeLog({INFO = "Request Made: " .. uteisModule.tableToString(obj)})
-            handleRequest(obj)
-        end
-        -- os.sleep(0.5)
+        os.sleep(1)
     end
 end 
 
