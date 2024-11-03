@@ -3,9 +3,6 @@ local uteisModule = require("/CC/Uteis/Uteis")
 local serverURL = "http://localhost:5015"
 local apiToken = "token"
 
-local logFilePath = "/CC/Logs/logs.txt"
-local statusFilePath = "/CC/Logs/APIStatus.txt"
-
 local APIModules = {}
 
 local function handleRequest()
@@ -34,6 +31,10 @@ local function startAPI(APIModulesToLoad)
     end
 end 
 
+local function resorceTrackerAPI(APIModulesToLoad)
+    -- primeiro verifica quais recursos trackear pelo liferay
+    -- depois inicia o loop para ficar mandando novos pontos pro liferay
+end 
 
 return {
     startAPI = startAPI,
