@@ -18,7 +18,7 @@ end
 function mainPageModule.updateFrame()
 end
 
-function generatorGUIModule.updateInterfaces()
+function mainPageModule.updateInterfaces()
 end
 
 return mainPageModule
