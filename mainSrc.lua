@@ -1,35 +1,35 @@
--- local APIModule = require("/CC/API") 
--- local GUIModule = require("/CC/GUI")
+local APIModule = require("/CC/API") 
+local GUIModule = require("/CC/GUI")
 
--- -- ----------------------------------------
--- -- --API
--- -- ----------------------------------------
+-- ----------------------------------------
+-- --API
+-- ----------------------------------------
 
--- APIModules = {
---     resource    = require("/CC/Pages/ResorcesPage/API"),
---     generator   = require("/CC/Pages/GeneratorPage/API")
--- }
+APIModules = {
+    resource    = require("/CC/Pages/ResorcesPage/API"),
+    generator   = require("/CC/Pages/GeneratorPage/API")
+}
 
--- -- ----------------------------------------
--- -- --GUI
--- -- ----------------------------------------
+-- ----------------------------------------
+-- --GUI
+-- ----------------------------------------
 
--- GUIModules = {
---     mainPageModule              = require("/CC/Pages/mainPage/GUI"),    
---     APIGUIModule                = require("/CC/Pages/APIPage/GUI"),
---     generatorGUIModule          = require("/CC/Pages/GeneratorPage/GUI"),
---     resorcesManagerGUIModule    = require("/CC/Pages/ResorcesPage/GUI")
--- }
+GUIModules = {
+    mainPageModule              = require("/CC/Pages/mainPage/GUI"),    
+    -- APIGUIModule                = require("/CC/Pages/APIPage/GUI"),
+    -- generatorGUIModule          = require("/CC/Pages/GeneratorPage/GUI"),
+    -- resorcesManagerGUIModule    = require("/CC/Pages/ResorcesPage/GUI")
+}
 
--- -- ----------------------------------------
--- -- --ENTRRYPOINT
--- -- ----------------------------------------
+-- ----------------------------------------
+-- --ENTRRYPOINT
+-- ----------------------------------------
 
--- parallel.waitForAny(
---     function() APIModule.startAPI(APIModules) end,
---     function() GUIModule.startGUI(GUIModules) end,
---     function() GUIModule.basalt.autoUpdate() end
--- )
+parallel.waitForAny(
+    function() APIModule.startAPI(APIModules) end,
+    function() GUIModule.startGUI(GUIModules) end,
+    function() GUIModule.basalt.autoUpdate() end
+)
 
 -- ----------------------------------------
 -- --BASALT 2.0
@@ -47,5 +47,3 @@
 -- end)
 
 -- basalt.run()
-
-print("Hello, World!")
