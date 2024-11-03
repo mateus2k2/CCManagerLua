@@ -6,8 +6,8 @@ local GUIModule = require("/CC/GUI")
 -- ----------------------------------------
 
 APIModules = {
-    resource    = require("/CC/Pages/ResorcesPage/API"),
-    generator   = require("/CC/Pages/GeneratorPage/API")
+    -- resource    = require("/CC/Pages/ResorcesPage/API"),
+    -- generator   = require("/CC/Pages/GeneratorPage/API")
 }
 
 -- ----------------------------------------
