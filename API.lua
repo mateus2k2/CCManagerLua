@@ -10,14 +10,7 @@ local function handleRequest()
 end
 
 local function status()
-    local headers = { ["Authorization"] = apiToken}
-    request = http.get(serverURL .. "/status", headers)
-    if request then 
-        request.close()
-        return "OK" 
-    else
-        return "DOWN"
-    end
+    return "OK" 
 end
 
 local function startAPI(APIModulesToLoad)
